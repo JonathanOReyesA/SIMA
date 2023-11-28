@@ -1,0 +1,6 @@
+mx\com\gentera\seguros\common\email\configuration\SmtpConfig.class
+mx\com\gentera\seguros\common\email\beans\SmtpBean.class
+mx\com\gentera\seguros\common\email\services\EmailLocalServiceImpl.class
+mx\com\gentera\seguros\common\email\services\IEmailService.class
+META-INF\spring-configuration-metadata.json
+mx\com\gentera\seguros\common\email\services\EmailServiceImpl.class

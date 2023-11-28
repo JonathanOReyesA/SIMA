@@ -1,0 +1,111 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="searchClaims">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="searchClaims" type="tns:searchClaims" />
+			<xs:element name="searchClaimsResponse"
+				type="tns:searchClaimsResponse" />
+			<xs:complexType name="searchClaims">
+				<xs:sequence>
+					<xs:element name="option" type="xs:string" minOccurs="0" />
+					<xs:element name="paramKey" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchClaimsResponse">
+				<xs:sequence>
+					<xs:element name="return" type="tns:claimsRespMsgDataType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimsRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="claimsList" type="tns:claimsDataType"
+						nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimsDataType">
+				<xs:sequence>
+					<xs:element name="consecutive" type="xs:int"
+						minOccurs="0" />
+					<xs:element name="sinisterNumber" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="sinisterCause" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="claimedCoverage" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="claimDate" type="xs:dateTime"
+						minOccurs="0" />
+					<xs:element name="sinesterStatus" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="clientId" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="clientName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="medicalCertificate" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="medicalName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Indicator" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="osName" type="xs:string" minOccurs="0" />
+					<xs:element name="promoter" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="siniestralidad" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="searchClaims">
+		<part name="parameters" element="tns:searchClaims" />
+	</message>
+	<message name="searchClaimsResponse">
+		<part name="parameters" element="tns:searchClaimsResponse" />
+	</message>
+	<portType name="searchClaims">
+		<operation name="searchClaims">
+			<input
+				wsam:Action="http://gentera.com.mx/searchClaims/searchClaimssRequest"
+				message="tns:searchClaims" />
+			<output
+				wsam:Action="http://gentera.com.mx/searchClaims/searchClaimsResponse"
+				message="tns:searchClaimsResponse" />
+		</operation>
+	</portType>
+	<binding name="searchClaimsPortBinding" type="tns:searchClaims">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="searchClaims">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="searchClaims">
+		<port name="searchClaimsPort"
+			binding="tns:searchClaimsPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/searchClaims" />
+		</port>
+	</service>
+</definitions>

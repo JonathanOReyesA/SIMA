@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCREATECLAIM</storedProcedureName>
+
+  <parameter>
+  	<parameterName>P_INSURANCEID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_COVERAGEID</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_CLAIMDATE</parameterName>
+  	<typeParameter>DATE</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_AFFECTED</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_CLAIMCAUSEID</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_STATUSID</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_STATUSDATE</parameterName>
+  	<typeParameter>TIMESTAMP</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_USER</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>P_TRACKINGEMAIL</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>ProcessInstanceID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_BUSINESSPARTNERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_CLAIMDAYS</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_FLAGCOVERAGE</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_INITIAL_DATE</parameterName>
+  	<typeParameter>TIMESTAMP</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_END_DATE</parameterName>
+  	<typeParameter>TIMESTAMP</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_CLAIMPAYMENTTYPE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_ID_MEDICO</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_PARTNERID</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+    <parameter>
+  	<parameterName>P_ERROR</parameterName>
+  		<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_ERROR_DESC</parameterName>
+  		<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_IDCLAIM</parameterName>
+  		<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+</callSP>

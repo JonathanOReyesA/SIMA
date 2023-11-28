@@ -1,0 +1,88 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getPromotores">
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<xs:element name="getPromotores" type="tns:getPromotores" />
+			<xs:element name="promotoresResponse" type="tns:promotoresResponse" />
+			<xs:complexType name="getPromotores">
+				<xs:sequence>
+					<xs:element name="collaboratorID" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="collaboratorName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="promotoresResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:promotoresRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="promotoresRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="promotoresList"
+						type="tns:promotoresDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="promotoresDataType">
+				<xs:sequence>
+					<xs:element name="numeroNomina" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="nombrePromotor" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="nombreOficina" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="promotores">
+		<part name="parameters" element="tns:getPromotores" />
+	</message>
+	<message name="promotoresResponse">
+		<part name="parameters" element="tns:promotoresResponse" />
+	</message>
+	<portType name="getPromotores">
+		<operation name="getPromotores">
+			<input
+				wsam:Action="http://gentera.com.mx/getPromotores/getPromotoresRequest"
+				message="tns:promotores" />
+			<output
+				wsam:Action="http://gentera.com.mx/getPromotores/getPromotoresResponse"
+				message="tns:promotoresResponse" />
+		</operation>
+	</portType>
+	<binding name="getPromotoresPortBinding" type="tns:getPromotores">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getPromotores">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getPromotores">
+		<port name="getPromotoresPort"
+			binding="tns:getPromotoresPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getPromotores" />
+		</port>
+	</service>
+</definitions>

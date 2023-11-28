@@ -1,0 +1,98 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="createUpdateHospital">
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<xs:element name="createUpdateHospital"
+				type="tns:createUpdateHospital" />
+			<xs:element name="createUpdateHospitalResponse"
+				type="tns:createUpdateHospitalResponse" />
+
+			<xs:complexType name="createUpdateHospital">
+				<xs:sequence>
+					<xs:element name="idHospital" type="xs:int" minOccurs="0" />
+					<xs:element name="nombre" type="xs:string" minOccurs="0" />
+					<xs:element name="rfc" type="xs:string" minOccurs="0" />
+					<xs:element name="descripcion" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="idType" type="xs:string" minOccurs="0" />
+					<xs:element name="calle" type="xs:string" minOccurs="0" />
+					<xs:element name="colonia" type="xs:string" minOccurs="0" />
+					<xs:element name="ciudad" type="xs:string" minOccurs="0" />
+					<xs:element name="estado" type="xs:string" minOccurs="0" />
+					<xs:element name="CP" type="xs:string" minOccurs="0" />
+					<xs:element name="status" type="xs:string" minOccurs="0" />
+					<xs:element name="userID" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="createUpdateHospitalResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:createUpdateHospitalRespMsgDataType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="createUpdateHospitalRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="errorList" type="tns:errorDataType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="errorDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="createUpdateHospital">
+		<part name="parameters" element="tns:createUpdateHospital" />
+	</message>
+	<message name="createUpdateHospitalResponse">
+		<part name="parameters" element="tns:createUpdateHospitalResponse" />
+	</message>
+	<portType name="createUpdateHospital">
+		<operation name="createUpdateHospital">
+			<input
+				wsam:Action="http://gentera.com.mx/createUpdateHospital/createUpdateHospitalRequest"
+				message="tns:createUpdateHospital" />
+			<output
+				wsam:Action="http://gentera.com.mx/createUpdateHospital/createUpdateHospitalResponse"
+				message="tns:createUpdateHospitalResponse" />
+		</operation>
+	</portType>
+	<binding name="createUpdateHospitalPortBinding"
+		type="tns:createUpdateHospital">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="createUpdateHospital">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="createUpdateHospital">
+		<port name="createUpdateHospitalPort"
+			binding="tns:createUpdateHospitalPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/createUpdateHospital" />
+		</port>
+	</service>
+</definitions>

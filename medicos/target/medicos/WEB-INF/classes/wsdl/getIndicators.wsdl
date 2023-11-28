@@ -1,0 +1,98 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getIndicators">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="getIndicators" type="tns:getIndicators" />
+			<xs:element name="getIndicatorsResponse"
+				type="tns:getIndicatorsResponse" />
+
+			<xs:complexType name="getIndicators">
+				<xs:sequence>
+					<xs:element name="certificate" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="coverageID" type="xs:int" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getIndicatorsResponse">
+				<xs:sequence>
+					<xs:element name="return" type="tns:indicatorsRespMsg"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="indicatorsRespMsg">
+				<xs:sequence>
+					<xs:element name="indicatorsList"
+						type="tns:indicatorsDataType" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="indicatorsDataType">
+				<xs:sequence>
+					<xs:element name="cliente" type="xs:string" minOccurs="0" />
+					<xs:element name="indicadorCliente" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="promotor" type="xs:string" minOccurs="0" />
+					<xs:element name="indicadorPromotor" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="os" type="xs:string" minOccurs="0" />
+					<xs:element name="indicadorOs" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="subdireccion" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="indicadorSudireccion" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="getIndicators">
+		<part name="parameters" element="tns:getIndicators" />
+	</message>
+	<message name="getIndicatorsResponse">
+		<part name="parameters" element="tns:getIndicatorsResponse" />
+	</message>
+	<portType name="getIndicators">
+		<operation name="getIndicators">
+			<input
+				wsam:Action="http://gentera.com.mx/getIndicators/getIndicatorsRequest"
+				message="tns:getIndicators" />
+			<output
+				wsam:Action="http://gentera.com.mx/getIndicators/getIndicatorsResponse"
+				message="tns:getIndicatorsResponse" />
+		</operation>
+	</portType>
+	<binding name="indicatorsPortBinding" type="tns:getIndicators">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getIndicators">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getIndicators">
+		<port name="indicatorsPort" binding="tns:indicatorsPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getIndicators" />
+		</port>
+	</service>
+
+
+</definitions>

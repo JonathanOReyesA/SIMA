@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPUPDATEBENEFICIARIES</storedProcedureName>
+  
+  <parameter>
+  	<parameterName>P_BUSINESSPARTNERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_PERCENTAGE</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+<parameter>
+  	<parameterName>P_GIVENNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+    <parameter>
+  	<parameterName>P_MIDDLENAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_FAMILYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+     
+  
+
+  
+   <parameter>
+  	<parameterName>P_ADDITIONALFAMILYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_HOMEPHONE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_OFFICEPHONE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_CELLPHONE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_STREETNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_EXTERIORHOUSEID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_INTERIORHOUSEID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_CITYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_DISTRICTNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_REGIONNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   <parameter>
+  	<parameterName>P_POSTALCODE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_COUNTRYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>P_ADDRESSTYPE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_RFC</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_BIRTHDATE</parameterName>
+  	<typeParameter>DATE</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_MARRIEDFAMILIYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_MARITALSTATUS</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ZONE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_PARTNERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ERROR</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ERRORDESC</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+   
+</callSP>

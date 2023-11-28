@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPINSURANCECANCEL_PE</storedProcedureName>
+
+  <parameter>
+  	<parameterName>P_REG_LEI</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_REG_PROC</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>P_REG_RECHAZA</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>P_ERROR</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ERRORDESC</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+
+</callSP>

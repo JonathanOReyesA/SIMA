@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPUPDATESERVICEUSER</storedProcedureName>
+
+  <parameter>
+  	<parameterName>P_CLAIMID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_SERVICEUSERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_GIVENNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_MIDDLENAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_FAMILYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_ADDITIONALFAMILYNAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_BIRTHDATE</parameterName>
+  	<typeParameter>DATE</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_GENDER</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_AGE</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  
+  
+  <parameter>
+  	<parameterName>P_SERVICEUSERID_NEW</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_ERROR</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ERROR_DESC</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+
+
+</callSP>

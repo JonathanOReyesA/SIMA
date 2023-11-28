@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: e-jonreyes
+Build-Jdk: 21.0.1
+Implementation-Title: zip
+Implementation-Version: 1.0.0
+Implementation-Vendor-Id: mx.com.gentera.seguros.common
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+

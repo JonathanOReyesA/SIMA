@@ -1,0 +1,647 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.blackList",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean blackListEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.comportamiento",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean comportamientoEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.createUpdateHospital",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean createUpdateHospitalEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getAgencias",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getAgenciasEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getClientes",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getClientesEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getDoctors",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getDoctorsEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getFlagCoverage",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean coverageEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getHospitales",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getHospitalesEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getIndicators",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getIndicatorsEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getPromotersByOffice",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getPromotersByOfficeEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getPromotores",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getPromotoresEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.getSubdireccion",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean getSubdireccionEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.hospitalType",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean hospitalTypeEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.medicalIndicators",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean medicalIndicatorsEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.searchClaims",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean searchClaimsEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.medicos.configuration.ServicesConfig",
+      "name": "endpoint.updateIMClaim",
+      "sourceMethod": "public com.gentera.medicos.beans.EndpointBean updateClaimEndpointBean() ",
+      "type": "com.gentera.medicos.beans.EndpointBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.blackList.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.comportamiento.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.createUpdateHospital.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getAgencias.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getClientes.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getDoctors.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getFlagCoverage.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getHospitales.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getIndicators.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotersByOffice.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getPromotores.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.getSubdireccion.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.hospitalType.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.medicalIndicators.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.searchClaims.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.endpoint-context-path",
+      "description": "Ruta de contexto para el endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.file-path-local",
+      "description": "Nombre de la ruta temporal para los archivos",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.stored-procedure-name",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.medicos.beans.EndpointBean",
+      "name": "endpoint.updateIMClaim.stored-procedure-name-before",
+      "description": "Nombre del Stored Procedure a ejecutar dentro del endpoint terminando el\r\n primer proceso",
+      "type": "java.lang.String"
+    }
+  ]
+}

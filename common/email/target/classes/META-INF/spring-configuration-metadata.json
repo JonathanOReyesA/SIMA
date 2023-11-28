@@ -1,0 +1,60 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.configuration.SmtpConfig",
+      "name": "smtp.server.seguros",
+      "sourceMethod": "public mx.com.gentera.seguros.common.email.beans.SmtpBean segurosSmtp() ",
+      "type": "mx.com.gentera.seguros.common.email.beans.SmtpBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.auth",
+      "description": "Indicador de autenticacion requerida en el servidor",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.checkserveridentity",
+      "description": "Indicador de verificacion de la identidad del servidor",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.host",
+      "description": "Nombre del host del servicio SMTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.password",
+      "description": "Password para ingresar al SMTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.port",
+      "description": "Puerto del servicio SMTP en el servidor",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.ssl",
+      "description": "Indicador de conexion SSL hacia el servidor",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.user",
+      "description": "Usuario para ingresar al SMTP",
+      "type": "java.lang.String"
+    }
+  ]
+}

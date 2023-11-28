@@ -1,0 +1,149 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="HospitalTypeCatalog">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="getHospitalType" type="tns:getHospitalType" />
+			<xs:element name="hospitalResponse" type="tns:hospitalResponse" />
+
+			<xs:element name="hospitalTypeUPD" type="tns:hospitalTypeUPD" />
+			<xs:element name="hospitalTypeUPDResponse"
+				type="tns:hospitalTypeUPDResponse" />
+
+			<xs:complexType name="getHospitalType">
+				<xs:sequence>
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hospitalResponse">
+				<xs:sequence>
+					<xs:element name="hospitalsTypes"
+						type="tns:hospitalsRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hospitalsRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="hospitalsTypesList"
+						type="tns:hostipalDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hostipalDataType">
+				<xs:sequence>
+					<xs:element name="idType" type="xs:int" minOccurs="0" />
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="hospitalTypeUPD">
+				<xs:sequence>
+					<xs:element name="idType" type="xs:int" minOccurs="0" />
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="status" type="xs:string" minOccurs="0" />
+					<xs:element name="user" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="hospitalTypeUPDResponse">
+				<xs:sequence>
+					<xs:element name="response"
+						type="tns:cretaUpdateHospitalesTypeRespMsg"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="cretaUpdateHospitalesTypeRespMsg">
+				<xs:sequence>
+					<xs:element name="errorList" type="tns:errorDataType"
+						nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="errorDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+
+	<message name="hospitalRequest">
+		<part name="parameters" element="tns:getHospitalType" />
+	</message>
+	<message name="hospitalResponse">
+		<part name="parameters" element="tns:hospitalResponse" />
+	</message>
+
+	<message name="hospitalTypeUPD">
+		<part name="parameters" element="tns:hospitalTypeUPD" />
+	</message>
+	<message name="hospitalTypeUPDResponse">
+		<part name="parameters" element="tns:hospitalTypeUPDResponse" />
+	</message>
+
+	<portType name="HospitalTypeCatalog">
+		<operation name="getHospitalType">
+			<input
+				wsam:Action="http://gentera.com.mx/HospitalTypeCatalog/getHospitalTypeRequest"
+				message="tns:hospitalRequest" />
+			<output
+				wsam:Action="http://gentera.com.mx/HospitalTypeCatalog/getHospitalTypeResponse"
+				message="tns:hospitalResponse" />
+		</operation>
+
+		<operation name="hospitalTypeUPD">
+			<input
+				wsam:Action="http://gentera.com.mx/HospitalTypeCatalog/hospitalTypeUPDRequest"
+				message="tns:hospitalTypeUPD" />
+			<output
+				wsam:Action="http://gentera.com.mx/HospitalTypeCatalog/hospitalTypeUPDResponse"
+				message="tns:hospitalTypeUPDResponse" />
+		</operation>
+
+	</portType>
+	<binding name="HospitalTypeCatalogBinding" type="tns:HospitalTypeCatalog">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<operation name="getHospitalType">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="hospitalTypeUPD">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="HospitalTypeCatalog">
+		<port name="HospitalTypeCatalogPort"
+			binding="tns:HospitalTypeCatalogBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/HospitalTypeCatalog" />
+		</port>
+	</service>
+</definitions>

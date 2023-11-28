@@ -1,0 +1,156 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="medicalIndicators">
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<!--Actualizatr los parametros de los indicadores-->
+			<xs:element name="updateImParameters" type="tns:updateImParameters" />
+			<xs:element name="updateImParametersResponse"
+				type="tns:updateImParametersResponse" />
+			<!--Obtener los indicadores-->
+			<xs:element name="getMedicalIndicators"
+				type="tns:getMedicalIndicators" />
+			<xs:element name="getMedicalIndicatorsResponse"
+				type="tns:getMedicalIndicatorsResponse" />
+
+			<xs:complexType name="updateImParameters">
+				<xs:sequence>
+					<xs:element name="paramId" type="xs:int" minOccurs="0" />
+					<xs:element name="maxDays" type="xs:int" minOccurs="0" />
+					<xs:element name="maxSiniestros" type="xs:int" minOccurs="0" />
+					<xs:element name="user" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerId" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="updateImParametersResponse">
+				<xs:sequence>
+					<xs:element name="response"
+						type="tns:updateImRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="updateImRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="errorList" type="tns:errorDataType"
+						nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="errorDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="getMedicalIndicators">
+				<xs:sequence>
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getMedicalIndicatorsResponse">
+				<xs:sequence>
+					<xs:element name="response"
+						type="tns:getMedicalIndicatorsRespMsgDataType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getMedicalIndicatorsRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="ImList"
+						type="tns:getMedicalIndicatorsDataType" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getMedicalIndicatorsDataType">
+				<xs:sequence>
+					<xs:element name="paramId" type="xs:int" minOccurs="0" />
+					<xs:element name="name" type="xs:string" minOccurs="0" />
+					<xs:element name="cobertura" type="xs:int" minOccurs="0" />
+					<xs:element name="descripcion" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="clave" type="xs:string" minOccurs="0" />
+					<xs:element name="maxDias" type="xs:int" minOccurs="0" />
+					<xs:element name="maxSiniestros" type="xs:int" minOccurs="0" />
+					<xs:element name="dateUpdate" type="xs:dateTime"
+						minOccurs="0" />
+					<xs:element name="usuario" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+
+	</types>
+	<message name="updateImParameters">
+		<part name="dataBlackList" element="tns:updateImParameters" />
+	</message>
+	<message name="updateImParametersResponse">
+		<part name="parameters" element="tns:updateImParametersResponse" />
+	</message>
+
+	<message name="getMedicalIndicators">
+		<part name="parameters" element="tns:getMedicalIndicators" />
+	</message>
+	<message name="getMedicalIndicatorsResponse">
+		<part name="parameters" element="tns:getMedicalIndicatorsResponse" />
+	</message>
+
+	<portType name="medicalIndicators">
+		<operation name="updateImParameters">
+			<input
+				wsam:Action="http://gentera.com.mx/medicalIndicators/updateImParametersRequest"
+				message="tns:updateImParameters" />
+			<output
+				wsam:Action="http://gentera.com.mx/medicalIndicators/updateImParametersResponse"
+				message="tns:updateImParametersResponse" />
+		</operation>
+
+		<operation name="getMedicalIndicators">
+			<input
+				wsam:Action="http://gentera.com.mx/medicalIndicators/getMedicalIndicatorsRequest"
+				message="tns:getMedicalIndicators" />
+			<output
+				wsam:Action="http://gentera.com.mx/medicalIndicators/getMedicalIndicatorsResponse"
+				message="tns:getMedicalIndicatorsResponse" />
+		</operation>
+
+	</portType>
+	<binding name="medicalIndicatorsPortBinding" type="tns:medicalIndicators">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<operation name="updateImParameters">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="getMedicalIndicators">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+	</binding>
+	<service name="medicalIndicators">
+		<port name="medicalIndicatorsPort"
+			binding="tns:medicalIndicatorsPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/medicalIndicators" />
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,165 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="Doctors">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<!--METODO OBTENER DOCTORES-->
+			<xs:element name="getDoctors" type="tns:getDoctors" />
+			<xs:element name="doctorsResponse" type="tns:doctorsResponse" />
+
+			<!--METODO  CREAR O ACTUALIZAR DOCTORES-->
+			<xs:element name="createUpdateDoctor" type="tns:createUpdateDoctor" />
+			<xs:element name="createUpdateDoctorResponse"
+				type="tns:createUpdateDoctorResponse" />
+
+			<xs:complexType name="getDoctors">
+				<xs:sequence>
+					<xs:element name="identificationCard" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="nameDoctor" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="doctorsResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:doctorsRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="doctorsRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="doctorsList"
+						type="tns:doctorsDataType" nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="doctorsDataType">
+				<xs:sequence>
+					<xs:element name="idDoctor" type="xs:int" minOccurs="0" />
+					<xs:element name="identificationCard" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="givenName" type="xs:string" minOccurs="0" />
+					<xs:element name="middleName" type="xs:string" minOccurs="0" />
+					<xs:element name="familyName" type="xs:string" minOccurs="0" />
+					<xs:element name="additionalFamilyName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="specialty" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="createUpdateDoctor">
+				<xs:sequence>
+					<xs:element name="idMedico" type="xs:string" minOccurs="0" />
+					<xs:element name="cedula" type="xs:string" minOccurs="0" />
+					<xs:element name="givenName" type="xs:string" minOccurs="0" />
+					<xs:element name="middleName" type="xs:string" minOccurs="0" />
+					<xs:element name="familyName" type="xs:string" minOccurs="0" />
+					<xs:element name="additionalFamilyName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="specialty" type="xs:string" minOccurs="0" />
+					<xs:element name="status" type="xs:string" minOccurs="0" />
+					<xs:element name="userID" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="createUpdateDoctorResponse">
+				<xs:sequence>
+					<xs:element name="message"
+						type="tns:createDoctorsRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="createDoctorsRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="messageList" type="tns:messageDataType"
+						nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="messageDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="doctor">
+		<part name="parameters" element="tns:getDoctors" />
+	</message>
+	<message name="doctorsResponse">
+		<part name="parameters" element="tns:doctorsResponse" />
+	</message>
+
+	<message name="createDoctor">
+		<part name="parameters" element="tns:createUpdateDoctor" />
+	</message>
+	<message name="createdoctorResponse">
+		<part name="parameters" element="tns:createUpdateDoctorResponse" />
+	</message>
+
+	<portType name="Doctors">
+		<operation name="getDoctors">
+			<input
+				wsam:Action="http://gentera.com.mx/Doctors/DoctorsRequest"
+				message="tns:doctor" />
+			<output
+				wsam:Action="http://gentera.com.mx/Doctors/DoctorsResponse"
+				message="tns:doctorsResponse" />
+		</operation>
+
+		<operation name="createUpdateDoctor">
+			<input
+				wsam:Action="http://gentera.com.mx/Doctors/DoctorsRequest"
+				message="tns:createDoctor" />
+			<output
+				wsam:Action="http://gentera.com.mx/Doctors/DoctorsResponse"
+				message="tns:createdoctorResponse" />
+		</operation>
+	</portType>
+	<binding name="DoctorsPortBinding" type="tns:Doctors">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<operation name="getDoctors">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="createUpdateDoctor">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="Doctors">
+		<port name="DoctorsPort" binding="tns:DoctorsPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/Doctors" />
+		</port>
+	</service>
+
+
+</definitions>

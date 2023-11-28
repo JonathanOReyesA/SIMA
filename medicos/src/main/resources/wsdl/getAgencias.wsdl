@@ -1,0 +1,91 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getAgencias">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="getAgencias" type="tns:getAgencias" />
+			<xs:element name="agenciasResponse"
+				type="tns:agenciasResponse" />
+			<xs:complexType name="getAgencias">
+				<xs:sequence>
+					<xs:element name="certerCode" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="salesOfficeName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="agenciasResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:agenciasRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="agenciasRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="agenciasList"
+						type="tns:agenciasDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="agenciasDataType">
+				<xs:sequence>
+					<xs:element name="certerCode" type="xs:string" minOccurs="0" />
+					<xs:element name="salesOfficeName" type="xs:string" minOccurs="0" />
+					<xs:element name="address" type="xs:string" minOccurs="0" />
+					<xs:element name="internalId" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="agencia">
+		<part name="parameters" element="tns:getAgencias" />
+	</message>
+	<message name="agenciasResponse">
+		<part name="parameters" element="tns:agenciasResponse" />
+	</message>
+	<portType name="getAgencias">
+		<operation name="getAgencias">
+			<input
+				wsam:Action="http://gentera.com.mx/getAgencias/getAgenciasRequest"
+				message="tns:agencia" />
+			<output
+				wsam:Action="http://gentera.com.mx/getAgencias/getAgenciasResponse"
+				message="tns:agenciasResponse" />
+		</operation>
+	</portType>
+	<binding name="getAgenciasPortBinding" type="tns:getAgencias">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getAgencias">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getAgencias">
+		<port name="getAgenciasPort" binding="tns:getAgenciasPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getAgencias" />
+		</port>
+	</service>
+
+
+</definitions>

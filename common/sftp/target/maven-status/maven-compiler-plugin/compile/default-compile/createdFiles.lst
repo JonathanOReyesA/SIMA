@@ -1,0 +1,5 @@
+mx\com\gentera\seguros\common\sftp\configuration\SftpConfig.class
+mx\com\gentera\seguros\common\sftp\services\ISftpService.class
+mx\com\gentera\seguros\common\sftp\beans\SftpSessionBean.class
+mx\com\gentera\seguros\common\sftp\services\SftpServiceImpl.class
+META-INF\spring-configuration-metadata.json

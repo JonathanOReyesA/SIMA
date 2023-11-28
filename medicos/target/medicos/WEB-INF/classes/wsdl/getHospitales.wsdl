@@ -1,0 +1,95 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getHospitales">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<xs:element name="getHospitales" type="tns:getHospitales" />
+			<xs:element name="hostipalesResponse"
+				type="tns:hostipalesResponse" />
+
+			<xs:complexType name="getHospitales">
+				<xs:sequence>
+					<xs:element name="hospitalName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="rfc" type="xs:string" minOccurs="0" />
+					<xs:element name="parnetID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hostipalesResponse">
+				<xs:sequence>
+					<xs:element name="hospitales"
+						type="tns:hospitalesRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hospitalesRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="hospitalesList"
+						type="tns:HospitalesDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="HospitalesDataType">
+				<xs:sequence>
+					<xs:element name="idHospital" type="xs:int"
+						minOccurs="0" />
+					<xs:element name="hospitalName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="rfc" type="xs:string" minOccurs="0" />
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="address" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="typeHospital" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="hospitalesRequest">
+		<part name="parameters" element="tns:getHospitales" />
+	</message>
+	<message name="hostipalesResponse">
+		<part name="parameters" element="tns:hostipalesResponse" />
+	</message>
+	<portType name="getHospitales">
+		<operation name="getHospitales">
+			<input
+				wsam:Action="http://gentera.com.mx/getHospitales/getHospitalesRequest"
+				message="tns:hospitalesRequest" />
+			<output
+				wsam:Action="http://gentera.com.mx/getHospitales/getHospitalesResponse"
+				message="tns:hostipalesResponse" />
+		</operation>
+	</portType>
+	<binding name="getHospitalesBinding" type="tns:getHospitales">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getHospitales">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getHospitales">
+		<port name="getHospitalesPort" binding="tns:getHospitalesBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getHospitales" />
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,263 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="blackList">
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<!--ADD TO BLACK LIST-->
+			<xs:element name="addToBlackList" type="tns:addToBlackList" />
+			<xs:element name="addToBlackListResponse"
+				type="tns:addToBlackListResponse" />
+			<!--GET BLACK LIST-->
+			<xs:element name="getBlackList" type="tns:getBlackList" />
+			<xs:element name="getBlackListResponse"
+				type="tns:getBlackListResponse" />
+
+			<!--CATALOGE CAUSAS-->
+			<xs:element name="blackListCause" type="tns:blackListCause" />
+			<xs:element name="listCauseResponse" type="tns:listCauseResponse" />
+
+			<!-- MODIFICAR CATALOGO CAUSAS-->
+			<xs:element name="blackListCauseUPD" type="tns:blackListCauseUPD" />
+			<xs:element name="listCauseResponseUPD"
+				type="tns:listCauseResponseUPD" />
+
+			<xs:complexType name="addToBlackList">
+				<xs:sequence>
+					<xs:element name="key" type="xs:string" minOccurs="0" />
+					<xs:element name="type" type="xs:string" minOccurs="0" />
+					<xs:element name="idCause" type="xs:int" minOccurs="0" />
+					<xs:element name="comments" type="xs:string" minOccurs="0" />
+					<xs:element name="status" type="xs:string" minOccurs="0" />
+					<xs:element name="user" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addToBlackListResponse">
+				<xs:sequence>
+					<xs:element name="_return"
+						type="tns:addToBlackListRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addToBlackListRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="blackListAddList"
+						type="tns:blackListAddDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="blackListAddDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="getBlackList">
+				<xs:sequence>
+					<xs:element name="blackKey" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getBlackListResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:getBlackListRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getBlackListRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="List" type="tns:getBlackDataType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getBlackDataType">
+				<xs:sequence>
+					<xs:element name="key" type="xs:string" minOccurs="0" />
+					<xs:element name="causa" type="xs:string" minOccurs="0" />
+					<xs:element name="Comentario" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="blackListCause">
+				<xs:sequence>
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listCauseResponse">
+				<xs:sequence>
+					<xs:element name="listCause"
+						type="tns:listCauseRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listCauseRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="causeList" type="tns:causesDataType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="causesDataType">
+				<xs:sequence>
+					<xs:element name="idCause" type="xs:int" minOccurs="0" />
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="blackListCauseUPD">
+				<xs:sequence>
+					<xs:element name="idCause" type="xs:string" minOccurs="0" />
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="status" type="xs:string" minOccurs="0" />
+					<xs:element name="user" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listCauseResponseUPD">
+				<xs:sequence>
+					<xs:element name="response"
+						type="tns:listCauseResponseUPDMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listCauseResponseUPDMsgDataType">
+				<xs:sequence>
+					<xs:element name="errorList" type="tns:errorDataType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="errorDataType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string" minOccurs="0" />
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+
+		</xs:schema>
+	</types>
+	<message name="blackListRequest">
+		<part name="dataBlackList" element="tns:addToBlackList" />
+	</message>
+	<message name="blackListResponse">
+		<part name="parameters" element="tns:addToBlackListResponse" />
+	</message>
+
+	<message name="getBlackList">
+		<part name="parameters" element="tns:getBlackList" />
+	</message>
+	<message name="getBlackListResponse">
+		<part name="parameters" element="tns:getBlackListResponse" />
+	</message>
+
+	<message name="causesRequest">
+		<part name="parameters" element="tns:blackListCause" />
+	</message>
+	<message name="causeResponse">
+		<part name="parameters" element="tns:listCauseResponse" />
+	</message>
+
+	<message name="blackListCauseUPD">
+		<part name="parameters" element="tns:blackListCauseUPD" />
+	</message>
+	<message name="listCauseResponseUPD">
+		<part name="parameters" element="tns:listCauseResponseUPD" />
+	</message>
+
+	<portType name="blackList">
+		<operation name="addToBlackList">
+			<input
+				wsam:Action="http://gentera.com.mx/blackList/addToBlackListRequest"
+				message="tns:blackListRequest" />
+			<output
+				wsam:Action="http://gentera.com.mx/blackList/addToBlackListResponse"
+				message="tns:blackListResponse" />
+		</operation>
+
+		<operation name="getBlackList">
+			<input
+				wsam:Action="http://gentera.com.mx/blackList/getBlackListRequest"
+				message="tns:getBlackList" />
+			<output
+				wsam:Action="http://gentera.com.mx/blackList/getBlackListResponse"
+				message="tns:getBlackListResponse" />
+		</operation>
+
+		<operation name="blackListCause">
+			<input
+				wsam:Action="http://gentera.com.mx/blackList/blackListCauseRequest"
+				message="tns:causesRequest" />
+			<output
+				wsam:Action="http://gentera.com.mx/blackList/blackListCauseResponse"
+				message="tns:causeResponse" />
+		</operation>
+
+		<operation name="blackListCauseUPD">
+			<input
+				wsam:Action="http://gentera.com.mx/blackList/blackListCauseUPD"
+				message="tns:blackListCauseUPD" />
+			<output
+				wsam:Action="http://gentera.com.mx/blackList/listCauseResponseUPD"
+				message="tns:listCauseResponseUPD" />
+		</operation>
+
+	</portType>
+	<binding name="blackListPortBinding" type="tns:blackList">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<operation name="addToBlackList">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="getBlackList">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="blackListCause">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="blackListCauseUPD">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="blackList">
+		<port name="blackListPort" binding="tns:blackListPortBinding">
+			<soap:address location="http://10.130.5.169:8080/medicos/blackList" />
+		</port>
+	</service>
+</definitions>

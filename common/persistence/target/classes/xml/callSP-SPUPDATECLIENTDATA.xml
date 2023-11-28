@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPUPDATECLIENTDATA</storedProcedureName>
+  
+	<result>
+		<errorCodeParameterName>P_ERROR</errorCodeParameterName>
+		<errorDescriptionParameterName>P_ERROR_DESC</errorDescriptionParameterName>
+		<successExecuteSPCode>0</successExecuteSPCode>
+	</result>
+</callSP>

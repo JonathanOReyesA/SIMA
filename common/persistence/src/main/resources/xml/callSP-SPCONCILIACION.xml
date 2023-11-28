@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCONCILIACION</storedProcedureName>
+  <function>true</function>
+  <cursor>true</cursor>
+  
+  
+  <parameter>
+  	<parameterName>P_INIVIG</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_FINVIG</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  
+  <parameter>
+  	<parameterName>P_PRODUCTID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_TYPE</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_MODEID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_USERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_FILENAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_INIVIGC</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_FINVIGC</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_PARTNERID</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  
+</callSP>

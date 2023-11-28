@@ -1,0 +1,294 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.aterna",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean sftpSessionAterna() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.db",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean dbSftpSession() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.files",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean filesSftpSession() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.mapfre",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean sftpSessionMapfre() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.mapfre_MXA",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean sftpSessionMapfre_MXA() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.rimac",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean sftpSessionRimac() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.configuration.SftpConfig",
+      "name": "sftp.server.universales",
+      "sourceMethod": "public mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean sftpSessionUniversales() ",
+      "type": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.aterna.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.db.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.files.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.mapfre_MXA.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.rimac.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.host",
+      "description": "IP del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.name",
+      "description": "Nombre del host SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.password",
+      "description": "Password para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.port",
+      "description": "Puerto del servicio SFTP en el host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.timeout",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.sftp.beans.SftpSessionBean",
+      "name": "sftp.server.universales.user",
+      "description": "Usuario para ingresar al servidor SFTP",
+      "type": "java.lang.String"
+    }
+  ]
+}

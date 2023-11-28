@@ -1,0 +1,96 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getClientes">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="getClientes" type="tns:getClientes" />
+			<xs:element name="clientesResponse"
+				type="tns:clientesResponse" />
+			<xs:complexType name="getClientes">
+				<xs:sequence>
+					<xs:element name="businessPartnerID" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="businessPartnerName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="birthday" type="xs:dateTime"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientesResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:clientesRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientesRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="clientesList"
+						type="tns:clientesDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="clientesDataType">
+				<xs:sequence>
+					<xs:element name="businessPartnerID" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="businessPartnerNam" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="birthday" type="xs:dateTime"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="cliente">
+		<part name="parameters" element="tns:getClientes" />
+	</message>
+	<message name="clientesResponse">
+		<part name="parameters" element="tns:clientesResponse" />
+	</message>
+	<portType name="getClientes">
+		<operation name="getClientes">
+			<input
+				wsam:Action="http://gentera.com.mx/getClientes/getClientesRequest"
+				message="tns:cliente" />
+			<output
+				wsam:Action="http://gentera.com.mx/getClientes/getClientesResponse"
+				message="tns:clientesResponse" />
+		</operation>
+	</portType>
+	<binding name="getClientesPortBinding" type="tns:getClientes">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getClientes">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getClientes">
+		<port name="getClientesPort"
+			binding="tns:getClientesPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getClientes" />
+		</port>
+	</service>
+
+
+</definitions>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="callSP.xsd">
+	<storedProcedureName>SPCREATEUPDHOPITALTYPE</storedProcedureName>
+	
+	<parameter>
+		<parameterName>P_ID_TYPE</parameterName>
+		<typeParameter>NUMERIC</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_DESCRIPCION</parameterName>
+		<typeParameter>VARCHAR</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_STATUS</parameterName>
+		<typeParameter>VARCHAR</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_USER</parameterName>
+		<typeParameter>VARCHAR</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_PARTNERID</parameterName>
+		<typeParameter>NUMERIC</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_ERROR</parameterName>
+		<outParameter>true</outParameter>
+		<typeParameter>NUMERIC</typeParameter>
+	</parameter>
+
+	<parameter>
+		<parameterName>P_ERROR_DESC</parameterName>
+		<outParameter>true</outParameter>
+		<typeParameter>VARCHAR</typeParameter>
+	</parameter>
+	
+</callSP>

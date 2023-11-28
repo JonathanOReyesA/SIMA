@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCIFCTL_PE</storedProcedureName>
+
+  <parameter>
+  	<parameterName>P_FILENAME</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_REG_LEI</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  
+   <parameter>
+  	<parameterName>P_REG_PROC</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_REG_RECHAZA</parameterName>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_STARTDATE</parameterName>
+  	<typeParameter>TIMESTAMP</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ENDDATE</parameterName>
+  	<typeParameter>TIMESTAMP</typeParameter>
+  </parameter>
+</callSP>

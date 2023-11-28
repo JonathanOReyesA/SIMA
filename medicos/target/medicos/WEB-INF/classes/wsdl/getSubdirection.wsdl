@@ -1,0 +1,85 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="getSubdirection">
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<xs:element name="getSubdirection" type="tns:getSubdirection" />
+			<xs:element name="subdirectionResponse"
+				type="tns:subdirectionResponse" />
+			<xs:complexType name="getSubdirection">
+				<xs:sequence>
+					<xs:element name="subdirectionName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="subdirectionResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:subdirectionRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="subdirectionRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="subdirectionList"
+						type="tns:subdirectionDataType" nillable="true"
+						minOccurs="0"
+						maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="subdirectionDataType">
+				<xs:sequence>
+					<xs:element name="subdirectionName" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="subdirection">
+		<part name="parameters" element="tns:getSubdirection" />
+	</message>
+	<message name="subdirectionResponse">
+		<part name="parameters" element="tns:subdirectionResponse" />
+	</message>
+	<portType name="getSubdirection">
+		<operation name="getSubdirection">
+			<input
+				wsam:Action="http://gentera.com.mx/getSubdirection/getSubdirectionRequest"
+				message="tns:subdirection" />
+			<output
+				wsam:Action="http://gentera.com.mx/getSubdirection/getSubdirectionResponse"
+				message="tns:subdirectionResponse" />
+		</operation>
+	</portType>
+	<binding name="getSubdirectionPortBinding"
+		type="tns:getSubdirection">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="getSubdirection">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getSubdirection">
+		<port name="getSubdirectionPort"
+			binding="tns:getSubdirectionPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/getSubdirection" />
+		</port>
+	</service>
+</definitions>

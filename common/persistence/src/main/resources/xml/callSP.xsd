@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="callSP">
+    <complexType>
+      <sequence>
+        <element type="string" name="storedProcedureName"/>
+        <element type="boolean" name="function" minOccurs="0"/>
+        <element type="boolean" name="cursor" minOccurs="0"/>
+        <element name="parameter" maxOccurs="unbounded" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element type="string" name="parameterName"/>
+              <element type="string" name="outParameter" minOccurs="0"/>
+              <element type="string" name="typeParameter"/>
+            </sequence>
+          </complexType>
+        </element>
+        <element name="result" maxOccurs="unbounded" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element type="string" name="errorCodeParameterName"/>
+              <element type="string" name="errorDescriptionParameterName" minOccurs="0"/>
+              <element type="integer" name="successExecuteSPCode"/>
+              <element type="string" name="successExecuteSPDescription" minOccurs="0"/>
+              <element type="integer" name="errorExecuteSPCode" minOccurs="0"/>
+              <element type="string" name="errorExecuteSPDescription" minOccurs="0"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

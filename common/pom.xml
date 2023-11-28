@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>mx.com.gentera</groupId>
+		<artifactId>seguros</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	
+	<groupId>mx.com.gentera.seguros</groupId>
+	<artifactId>common</artifactId>
+	<packaging>pom</packaging>
+	<name>Gentera Seguros Common</name>
+	<description>Librerias de Aplicaciones de Seguros</description>
+
+
+	<modules>
+		<module>zip</module>
+		<module>sftp</module>
+		<module>persistence</module>
+		<module>email</module>
+	</modules>
+</project>

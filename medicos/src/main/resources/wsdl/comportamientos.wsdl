@@ -1,0 +1,130 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="comportamiento">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+
+			<xs:element name="comportamientoDeta" type="tns:comportamientoDeta" />
+			<xs:element name="comportamientoResponse" type="tns:comportamientoResponse" />
+			<xs:element name="comportamientoAcum" type="tns:comportamientoAcum" />
+
+			<xs:complexType name="comportamientoDeta">
+				<xs:sequence>
+					<xs:element name="flagCoverage" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="monthYear" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="partnerId" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="comportamientoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="tns:resultListType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="resultListType">
+				<xs:sequence>
+					<xs:element name="resultType" type="tns:resultDataType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="resultDataType">
+				<xs:sequence>
+					<xs:element name="coverage" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="os" type="xs:string" minOccurs="0" />
+					<xs:element name="total" type="xs:int" minOccurs="0" />
+					<xs:element name="indicador" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+
+			<xs:complexType name="comportamientoAcum">
+				<xs:sequence>
+					<xs:element name="flagCoverage" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="fechaInit" type="xs:dateTime"
+						minOccurs="0" />
+					<xs:element name="fechaFin" type="xs:dateTime"
+						minOccurs="0" />
+					<xs:element name="partnerId" type="xs:string"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+
+
+		</xs:schema>
+	</types>
+	<message name="comportamientoDeta">
+		<part name="parameters" element="tns:comportamientoDeta" />
+	</message>
+	<message name="comportamientoDResp">
+		<part name="parameters" element="tns:comportamientoResponse" />
+	</message>
+	<message name="comportamientoAcum">
+		<part name="parameters" element="tns:comportamientoAcum" />
+	</message>
+	<message name="comportamientoAResp">
+		<part name="parameters" element="tns:comportamientoResponse" />
+	</message>
+	<portType name="comportamiento">
+		<operation name="comportamientoDeta">
+			<input
+				wsam:Action="http://gentera.com.mx/comportamiento/comportamientoDetaRequest"
+				message="tns:comportamientoDeta" />
+			<output
+				wsam:Action="http://gentera.com.mx/comportamiento/comportamientoDetaResponse"
+				message="tns:comportamientoDResp" />
+		</operation>
+		<operation name="comportamientoAcum">
+			<input
+				wsam:Action="http://gentera.com.mx/Comportamiento/comportamientoAcumRequest"
+				message="tns:comportamientoAcum" />
+			<output
+				wsam:Action="http://gentera.com.mx/Comportamiento/comportamientoAcumResponse"
+				message="tns:comportamientoAResp" />
+		</operation>
+	</portType>
+	<binding name="comportamientoPortBinding"
+		type="tns:comportamiento">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="comportamientoDeta">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="comportamientoAcum">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="comportamiento">
+		<port name="comportamientoPort"
+			binding="tns:comportamientoPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/medicos/comportamiento" />
+		</port>
+	</service>
+</definitions>

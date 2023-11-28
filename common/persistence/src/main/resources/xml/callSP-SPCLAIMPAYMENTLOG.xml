@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCLAIMPAYMENTLOG</storedProcedureName>
+
+  
+  <parameter>
+  	<parameterName>P_USERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_CLAIMID</parameterName>
+  	<typeParameter>CLOB</typeParameter>
+  </parameter>
+
+  
+
+</callSP>

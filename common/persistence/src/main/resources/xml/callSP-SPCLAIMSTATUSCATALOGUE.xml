@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCLAIMSTATUSCATALOGUE</storedProcedureName>
+  <function>true</function>
+  <cursor>true</cursor>
+  <parameter>
+  	<parameterName>P_CLAIMSTATUSTYPE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  
+</callSP>

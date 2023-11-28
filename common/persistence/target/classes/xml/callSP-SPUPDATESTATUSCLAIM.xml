@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPUPDATESTATUSCLAIM</storedProcedureName> 
+
+	<parameter>
+  		<parameterName>P_CLAIMID</parameterName>
+  		<typeParameter>VARCHAR</typeParameter>
+  	</parameter>
+  	
+	<parameter>
+  		<parameterName>P_CLAIMSTATUSID</parameterName>
+  		<typeParameter>NUMERIC</typeParameter>
+  	</parameter>
+  	
+  	<parameter>
+  		<parameterName>P_CLAIMSTATUSDATE</parameterName>
+  		<typeParameter>DATE</typeParameter>
+  	</parameter>
+  	
+  	<parameter>
+  		<parameterName>P_CLAIMSTATUSUSER</parameterName>
+  		<typeParameter>VARCHAR</typeParameter>
+  	</parameter>
+  	
+  	<parameter>
+  		<parameterName>P_PAYMENTTYPE</parameterName>
+  		<typeParameter>VARCHAR</typeParameter>
+  	</parameter>
+  	
+  	<parameter>
+  		<parameterName>P_ERROR</parameterName>
+  		<outParameter>true</outParameter>
+  		<typeParameter>NUMERIC</typeParameter>
+  	</parameter>
+    <parameter>
+  		<parameterName>P_ERROR_DESC</parameterName>
+  		<outParameter>true</outParameter>
+  		<typeParameter>VARCHAR</typeParameter>
+  	</parameter>
+</callSP>

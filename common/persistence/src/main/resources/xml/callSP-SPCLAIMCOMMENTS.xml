@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="callSP.xsd">
+  <storedProcedureName>SPCLAIMCOMMENTS</storedProcedureName>
+
+  <parameter>
+  	<parameterName>P_CLAIMID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_COMMENT</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_USERID</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+  
+  <parameter>
+  	<parameterName>P_DATE</parameterName>
+  	<typeParameter>DATE</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_STATUS</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+
+   <parameter>
+  	<parameterName>P_ERROR</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>NUMERIC</typeParameter>
+  </parameter>
+  
+   <parameter>
+  	<parameterName>P_ERRORDESC</parameterName>
+  	<outParameter>true</outParameter>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
+</callSP>
