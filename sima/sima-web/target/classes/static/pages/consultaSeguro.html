@@ -1,0 +1,205 @@
+<style>
+.radioInput {
+	padding-right: 25px;
+}
+
+.formulario {
+	padding-top: 15px;
+}
+</style>
+
+<div class="container-fluid">
+
+
+	<div class="card-header bg-verde">
+
+		<h5 class="bg-font">
+			<i class="fa fa-fw fa-send"></i><span class="nav-link-text">
+				Buscar solicitud</span>
+		</h5>
+	</div>
+
+	<div class="formulario">
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-3">Socio:</label>
+			<div class="input-group col-md-4 col-sm-4 col-xs-4">
+				<select class="form-control" required
+					data-ng-model="partnerCatalogue.selected"
+					data-ng-options="option.name for option in partnerCatalogue"></select>
+			</div>
+		</div>
+
+
+
+		<div class="form-group">
+			<div class="input-group col-md-5 col-sm-5 col-xs-5">
+				<label class="radioInput"><input type="radio"
+					ng-click='changeRadioButtonBusqueda()' ng-model="radioBusqueda"
+					value="1"> Certificado</label> <label class="radioInput"><input
+					type="radio" ng-click='changeRadioButtonBusqueda()'
+					ng-model="radioBusqueda" value="2"> Id Cliente</label> <label
+					class="radioInput"><input type="radio"
+					ng-click='changeRadioButtonBusqueda()' ng-model="radioBusqueda"
+					value="3"> Id Solicitud</label> <label class="radioInput"><input
+					type="radio" ng-click='changeRadioButtonBusqueda()'
+					ng-model="radioBusqueda" value="4"> Otros</label>
+			</div>
+		</div>
+
+		<div ng-show="radioBusqueda != 4" class="form-group">
+			<label class="control-label col-md-2 col-sm-2 col-xs-2">{{textoBusqueda}}</label>
+			<div class="input-group col-md-4 col-sm-4 col-xs-4">
+				<input type="text" class="form-control" ng-model="campoIdBusqueda">
+			</div>
+		</div>
+
+
+		<div ng-show="radioBusqueda == 4" class="row">
+
+
+			<div class="form-group col-md-2 col-sm-2 col-xs-2">
+				<label class="control-label">*Nombre:</label>
+				<div class="input-group ">
+					<input type="text" class="form-control" ng-model="nombreBus">
+				</div>
+			</div>
+
+
+
+			<div class="form-group col-md-2 col-sm-2 col-xs-2">
+				<label class="control-label">Segundo Nombre:</label>
+				<div class="input-group ">
+					<input type="text" class="form-control" ng-model="sNombreBus">
+				</div>
+			</div>
+
+			<div class="form-group col-md-2 col-sm-2 col-xs-2">
+				<label class="control-label">*Apellido Paterno:</label>
+				<div class="input-group ">
+					<input type="text" class="form-control" ng-model="paternoBus">
+				</div>
+			</div>
+
+
+			<div class="form-group col-md-2 col-sm-2 col-xs-2">
+				<label class="control-label ">Apellido Materno:</label>
+				<div class="input-group ">
+					<input type="text" class="form-control" ng-model="maternoBus">
+				</div>
+			</div>
+
+
+			<div class="form-group col-md-3 col-sm-3 col-xs-3">
+				<label class="control-label">Fecha Nacimiento:</label>
+				<div class="input-group">
+					<input id="startDate" name="startDate" type="date"
+						ng-model="nacimientoBus" placeholder="yyyy-MM-dd"
+						class="form-control" ng-required="true" />
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="form-group">
+			<label class="control-label col-md-2 col-sm-2 col-xs-2">Buscar</label>
+			<div class="input-group col-md-7 col-sm-7 col-xs-7"
+				ng-show="radioBusqueda!=4">
+				<input type="button" class="btn btn-sm btn-info col-md-6"
+					ng-click="searchInsurance()" value="Buscar"
+					ng-disabled="campoIdBusqueda==null || campoIdBusqueda==''">
+			</div>
+			<div class="input-group col-md-7 col-sm-7 col-xs-7"
+				ng-show="radioBusqueda==4">
+				<input type="button" class="btn btn-sm btn-info col-md-6"
+					ng-click="searchInsurance()" value="Buscar"
+					ng-disabled="nombreBus=='' || nombreBus==null || paternoBus=='' || paternoBus==null">
+			</div>
+		</div>
+
+		<div ng-show="sinRegistros">
+			<div class="alert alert-{{alertType}}" ng-show="alertType">
+				<strong>{{alertMessage}}</strong>
+			</div>
+		</div>
+
+
+		<div>
+
+			<div class="card-header bg-verde">
+				<div class="row">
+					<div class="col-md-5">
+						<h5 class="bg-font">
+							<i class="fa fa-fw fa-send"></i><span class="nav-link-text">
+								Solicitudes Encontradas</span>
+						</h5>
+					</div>
+					<div class="col-md-1">
+						<button ng-click="exportInsurance();"
+							ng-disabled="formulario.numeroCuentaMaster.$invalid"
+							style="background: rgba(24, 160, 150, 1); color: white;"
+							class="btn" type="button">
+							<i class="fa fa-download"></i> <span>Exportar</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="table-responsive">
+				<table class="table table-bordered " id="tabla">
+					<tr class="tablaEncabezado">
+						<th>Socio</th>
+						<th>Oficina de Servicios/Agencia</th>
+						<th>ID Solicitud</th>
+						<th>Certificado</th>
+						<th>Poliza Aseguradora</th>
+						<th>ID Cliente</th>
+						<th>Nombre Completo</th>
+						<th>Fecha de Nacimiento</th>
+						<th>Producto</th>
+						<th>Modalidad</th>
+						<th>Tipo de Pago</th>
+						<th>Prima contratada</th>
+						<th>Prima a pagar</th>
+						<th>Fecha inicio de vigencia</th>
+						<th>Fecha fin de vigencia</th>
+						<th>Estatus solicitud</th>
+						<th>Fecha alta Aseguradora</th>
+						<th>Fecha baja Aseguradora</th>
+
+
+					</tr>
+
+					<tr ng-repeat="i in lstInsurance">
+						<td>{{i.socio}}</td>
+						<td>{{i.salesOffice}}</td>
+						<td>{{i.insuranceId}}</td>
+						<td>{{i.certificate}}</td>
+						<td>{{i.insurancePolicy}}</td>
+						<td>{{i.businessPartnerID}}</td>
+						<td>{{i.fullname}}</td>
+						<td>{{i.birthday}}</td>
+						<td>{{i.productName}}</td>
+						<td>{{i.description}}</td>
+						<td>{{i.tipoPago}}</td>
+						<td>{{i.cost}}</td>
+						<td>{{i.premium}}</td>
+						<td>{{i.startDate}}</td>
+						<td>{{i.endDate}}</td>
+						<td>{{i.statusName}}</td>
+						<td>{{i.fecAltaMapfre}}</td>
+						<td>{{i.fechaBajaMapfre}}</td>
+
+					</tr>
+
+
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

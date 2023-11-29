@@ -15,5 +15,6 @@
 
   <modules>
   	<module>sima-scheduler</module>
+  	<module>sima-web</module>
   </modules>
 </project>

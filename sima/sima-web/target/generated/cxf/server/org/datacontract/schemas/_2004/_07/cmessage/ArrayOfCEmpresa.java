@@ -1,0 +1,69 @@
+
+package org.datacontract.schemas._2004._07.cmessage;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Clase Java para ArrayOfCEmpresa complex type.
+ * 
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * 
+ * <pre>
+ * &lt;complexType name="ArrayOfCEmpresa"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="CEmpresa" type="{http://schemas.datacontract.org/2004/07/CMessage}CEmpresa" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ArrayOfCEmpresa", propOrder = {
+    "cEmpresa"
+})
+public class ArrayOfCEmpresa {
+
+    @XmlElement(name = "CEmpresa", nillable = true)
+    protected List<CEmpresa> cEmpresa;
+
+    /**
+     * Gets the value of the cEmpresa property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cEmpresa property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCEmpresa().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CEmpresa }
+     * 
+     * 
+     */
+    public List<CEmpresa> getCEmpresa() {
+        if (cEmpresa == null) {
+            cEmpresa = new ArrayList<CEmpresa>();
+        }
+        return this.cEmpresa;
+    }
+
+}

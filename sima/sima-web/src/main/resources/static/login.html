@@ -1,0 +1,26 @@
+<div class="container" ng-cloak>
+	<img class="mx-auto d-block" src="images/login_logo.png">
+	<div class="card card-login mx-auto mt-1">
+		<div class="card-body">
+			<form ng-submit="login()">
+				<div class="form-group">
+					<label for="username">Nombre de usuario</label> <input
+						class="form-control" id="username" type="text"
+						aria-describedby="usernameHelp" ng-model="credentials.username">
+				</div>
+				<div class="form-group">
+					<label for="password">Contraseña</label> <input
+						class="form-control" id="password" type="password"
+						ng-model="credentials.password">
+				</div>
+				<div class="alert alert-danger" ng-show="error">El usuario o
+					contraseña son incorrectos. Intente de nuevo.</div>
+				<button type="submit" class="btn btn-primary btn-block bg-gris">Iniciar
+					Sesión</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Page level plugin JavaScript-->
+<!-- Custom scripts for this page-->

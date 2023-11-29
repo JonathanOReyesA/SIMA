@@ -1,0 +1,302 @@
+<style>
+.radioInput {
+	padding-right: 25px;
+}
+
+.formulario {
+	padding-top: 15px;
+}
+</style>
+
+<div class="container-fluid" uploader="uploader"
+	filters="queueLimit, customFilter">
+
+	<div class="alert alert-{{alertType}}" ng-show="alertType">
+		<strong>{{alertMessage}}</strong>
+	</div>
+
+
+	<div class="card-header bg-verde">
+
+		<h5 class="bg-font">
+			<i class="fa fa-fw fa-send"></i><span class="nav-link-text">
+				Conciliar Seguro</span>
+		</h5>
+	</div>
+	<br> <br>
+	<div class="row">
+
+
+
+		<div class="form-group col-md-3 col-sm-3 col-xs-3">
+			<label class="control-label">Socio: *</label>
+			<div class="input-group">
+				<select class="form-control" required
+					data-ng-model="partnerCatalogue.selected"
+					ng-change="comboPartnerChange()"
+					data-ng-options="option.name for option in partnerCatalogue">
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group col-md-3 col-sm-3 col-xs-3">
+			<label class="control-label ">Tipo de Conciliacion: *</label>
+			<div class="input-group">
+				<select class="form-control" required
+					data-ng-model="conciliationCatalogue.selected"
+					data-ng-options="option.name for option in conciliationCatalogue"></select>
+			</div>
+		</div>
+
+		<div class="form-group col-md-4 col-sm-4 col-xs-4">
+			<label class="control-label">Producto: *</label>
+			<div class="input-group">
+				<select class="form-control" required
+					data-ng-model="productoCatalogue.selected"
+					ng-change="comboProductChange()"
+					data-ng-options="option.productName for option in productoCatalogue"></select>
+			</div>
+		</div>
+
+		<div class="form-group col-md-2 col-sm-2 col-xs-2">
+			<label class="control-label ">Modalidad: *</label>
+			<div class="input-group">
+				<select class="form-control" required
+					data-ng-model="modalidadCatalogue.selected"
+					data-ng-options="option.description for option in modalidadCatalogue"></select>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="row">
+
+		<div class="col-md-6">
+
+			<div class="card-header bg-verde">
+
+				<h5 class="bg-font">
+					<i class="fa fa-fw fa-calendar"></i><span class="nav-link-text">
+						Periodo de Conciliacion</span>
+				</h5>
+			</div>
+
+			<br>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="control-label">Desde: *</label>
+					<div class="input-group ">
+						<input id="startDate" name="startDate" type="date"
+							ng-model="startdatePeriodo" placeholder="yyyy-MM-dd"
+							ng-blur="changeStartDatePe(1)" class="form-control"
+							ng-required="true" />
+					</div>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label class="control-label">Hasta: *</label>
+					<div class="input-group ">
+						<input id="enddatePeriodo" name="enddatePeriodo" type="date"
+							ng-blur="changeStartDatePe(2)" ng-model="enddatePeriodo"
+							placeholder="yyyy-MM-dd" class="form-control" ng-required="true" />
+					</div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+		<div class="col-md-6">
+
+			<div class="card-header bg-verde">
+
+				<h5 class="bg-font">
+					<i class="fa fa-fw fa-calendar"></i><span class="nav-link-text">
+						Fecha de cierre</span>
+				</h5>
+			</div>
+
+			<br>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="control-label">Desde: *</label>
+					<div class="input-group ">
+						<input id="startdateCierre" name="startdateCierre" type="date"
+							ng-model="startdateCierre" placeholder="yyyy-MM-dd"
+							ng-blur="changeStartDatePe(3)" class="form-control"
+							ng-required="true" />
+					</div>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label class="control-label">Hasta: *</label>
+					<div class="input-group ">
+						<input id="enddateCierre" name="enddateCierre" type="date"
+							ng-model="enddateCierre" placeholder="yyyy-MM-dd"
+							ng-blur="changeStartDatePe(4)" class="form-control"
+							ng-required="true" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="card-header bg-verde">
+
+		<h5 class="bg-font">
+			<i class="fa fa-fw fa-calendar"></i><span class="nav-link-text">
+				Documento Adjunto</span>
+		</h5>
+	</div>
+
+	<br> <br>
+
+
+
+
+	<div class="container">
+
+
+
+		<div class="row">
+
+			<div class="col-md-3">
+
+				<h3>Seleccionar archivo</h3>
+
+
+
+				<label class="input-group-btn"> <span
+					class="btn btn-default"> <i
+						class="icon-span-filestyle fa fa-folder-open-o"></i>Examinar&hellip;
+						<input type="file" id="fileInputLayout" style="display: none;"
+						nv-file-select="" uploader="uploader" required
+						ng-disabled="uploader.queue.length > 0">
+				</span>
+				</label>
+			</div>
+
+			<div class="col-md-9" style="margin-bottom: 40px">
+
+				<h3>Archivo:</h3>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th width="50%">Nombre</th>
+							<th ng-show="uploader.isHTML5">Tamano</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in uploader.queue">
+							<td><strong>{{ item.file.name }}</strong></td>
+							<td ng-show="uploader.isHTML5" nowrap>{{
+								item.file.size/1024/1024|number:3 }} MB</td>
+							<td nowrap>
+								<button type="button" id="btnDelete"
+									class="btn btn-danger btn-xs"
+									ng-click="eliminarFileSelect(item)">
+									<span class="glyphicon glyphicon-trash"></span> Quitar
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="form-group">
+		<div class="input-group col-md-7 col-sm-7 col-xs-7">
+			<input type="button" class="btn btn-sm btn-info col-md-6"
+				ng-click="sendConciliacion()" value="Conciliar"
+				ng-disabled="startdatePeriodo=='' || enddatePeriodo==null || startDateCierre=='' || enddateCierre==null || uploader.queue.length == 0 || partnerCatalogue.selected.partnerId == 0 || conciliationCatalogue.selected.id == 0 || productoCatalogue.selected.productId== 0 || modalidadCatalogue.selected.id == 0 || errorFechas || fileValidUpload">
+		</div>
+
+
+	</div>
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" role="dialog"
+	aria-labelledby="documentModalLabel" aria-hidden="true" ng-cloak>
+	<div class="modal-dialog modal-dialog-centered modal-lg"
+		role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="documentModalLabel">Cifras Control</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Cerrar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+				<div class="card border-dark" ng-repeat="r in respConciliacion">
+
+					<div class="card-header bg-verde" style="height: 40px;">
+
+						<h4 class="bg-font">
+							<i class=""></i><span class="nav-link-text">
+								{{r.description}}</span>
+						</h4>
+					</div>
+
+					<div class="card-header" style="height: 40px;">
+
+						<h4>
+							<span class=""> {{r.tot}}</span>
+						</h4>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary"
+					ng-click="exportFile()">Exportar</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalError" tabindex="-1" role="dialog"
+	aria-labelledby="documentModalLabel" aria-hidden="true" ng-cloak>
+	<div class="modal-dialog modal-dialog-centered modal-sm"
+		role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="documentModalLabel">Mensaje</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Cerrar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+				<span>{{errorMsg}}</span>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>

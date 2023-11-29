@@ -1,0 +1,28 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "mx.com.gentera.seguros.sima.web.configuration.WebConfig",
+      "name": "api.server.scheduler",
+      "sourceMethod": "public mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean apiSchedulerBean() ",
+      "type": "mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean",
+      "name": "api.server.scheduler.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean",
+      "name": "api.server.scheduler.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean",
+      "name": "api.server.scheduler.user",
+      "type": "java.lang.String"
+    }
+  ]
+}

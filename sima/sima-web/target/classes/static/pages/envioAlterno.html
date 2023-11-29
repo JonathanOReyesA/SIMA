@@ -1,0 +1,119 @@
+<div class="container-fluid" ng-init="getLstPartner()">
+	<div class="card mb-3">
+		<div class="card-header bg-verde">
+			<h5 class="bg-font"><i class="fa fa-fw fa-send"></i><span class="nav-link-text">	   Envío Alterno Aseguradora</span></h5> 
+		</div>
+		<div class="card-body">
+			<div class="alert alert-{{alertType}}" ng-show="alertType">
+				<strong>{{alertMessage}}</strong>
+			</div>
+			<form name="frmSearch">
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<label for="partner">Socio: *</label>
+	                	<select class="custom-select" id="partner" name="partner" ng-model="searchInsurance.partner" ng-options="partner as partner.name for partner in partnerCatalogue track by partner.partnerId" ng-required="true">
+		                	<option value="">Seleccione...</option>
+						</select>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="businessPartnerId">ID Cliente:</label>
+						<input id="businessPartnerId" name="businessPartnerId" ng-model="searchInsurance.businessPartnerId" class="form-control"/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="certificate">Certificado:</label>
+						<input id="certificate" name="certificate" ng-model="searchInsurance.certificate" class="form-control"/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="startDate">Inicio de Vigencia: *</label>
+						<input id="startDate" name="startDate" type="date" ng-model="searchInsurance.startDate"
+						placeholder="yyyy-MM-dd" class="form-control" ng-required="true"/>
+					</div>
+					<div class="form-group col-md-3">		<div class="col-xs-3" style="height: 10px;"></div>		
+					<button  ng-click="getLstInsurance()" class="btn btn-sm btn-info col-md-6"
+				ng-disabled="frmSearch.partner.$error.required || frmSearch.startDate.$error.required || (!searchInsurance.businessPartnerId && !searchInsurance.certificate)">Buscar</button>
+			</div>
+				</div>
+				
+			</form>
+			
+			<div class="col-xs-12" style="height: 20px;"></div>
+		
+			<div class="table-responsive">
+				<table id="dataTable" class="table table-bordered" style="text-align:center"></table>
+			</div>
+			
+			<div class="col-xs-12" style="height: 20px;"></div>
+			
+			<button ng-click="createFiles()" class="btn btn-sm btn-info col-md-2" ng-disabled="selectedIndex && selectedIndex.length == 0">Generar Archivos</button>
+			
+			<div class="col-xs-12" style="height: 20px;"></div>
+			
+			<div class="table-responsive">
+			  <table class="table">
+			  	<caption ng-show="generatedFiles" ng-if="lstFile">Archivos generados: {{lstFile.length}}</caption>
+			    <thead>
+				    <tr>
+				      <th scope="col">Nombre</th>
+				      <th scope="col">Fecha creación</th>
+				      <th scope="col">Tamaño</th>
+				      <th scope="col">Estatus</th>
+				      <th/>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr ng-repeat="file in lstFile">
+				      <th scope="row">
+				      	{{file.name}}
+				      </th>
+				      <td>{{file.creationDateFormatted}}</td>
+				      <td>{{file.sizeFormatted}}</td>
+				      <td>{{file.status}}</td>
+				      <td>
+				      	<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary btn-sm" 
+							data-toggle="modal" data-target="#documentModal"
+							data-name="{{file.name}}" data-path="{{file.absolutePath}}">
+						  Mostrar contenido
+						</button>
+				    </tr>
+				  </tbody>
+			  </table>
+			</div>
+			
+			<button ng-click="sendFiles()" class="btn btn-sm btn-info col-md-2" ng-show="pendingSends" ng-disabled="!generatedFiles || !lstFile || lstFile.length == 0">Enviar Archivos</button>
+		</div>
+		
+		<div class="card-footer small text-muted">
+			<div class="alert alert-{{alertType}}" ng-show="alertType">
+				<strong>{{alertMessage}}</strong>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="documentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="documentModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<textarea class="form-control" id="content" rows="10"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page level plugin JavaScript-->
+<script src="vendor/datatables/jquery.dataTables.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+<script src="vendor/datatables/select/js/dataTables.select.min.js"></script>
+<!-- Custom scripts for this page-->
+<script src="js/sima-web-datatables.js"></script>
