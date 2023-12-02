@@ -7,66 +7,41 @@ public class Menu {
 	public String descripcion;
 	public int num;
 
-	public Menu(String name, String image, String descripcion, int num) {
-		super();
+	public Menu(String name, String img, String desc, int num) {
 		this.name = name;
-		this.image = image;
-		this.descripcion = descripcion;
+		this.image = img;
+		this.descripcion = desc;
 		this.num = num;
 	}
 
-	/**
-	 * @return the name
-	 */
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
-	/**
-	 * @param name the name to set
-	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/**
-	 * @return the image
-	 */
 	public String getImage() {
-		return image;
+		return this.image;
 	}
 
-	/**
-	 * @param image the image to set
-	 */
 	public void setImage(String image) {
 		this.image = image;
 	}
 
-	/**
-	 * @return the descripcion
-	 */
 	public String getDescripcion() {
-		return descripcion;
+		return this.descripcion;
 	}
 
-	/**
-	 * @param descripcion the descripcion to set
-	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	/**
-	 * @return the num
-	 */
 	public int getNum() {
-		return num;
+		return this.num;
 	}
 
-	/**
-	 * @param num the num to set
-	 */
 	public void setNum(int num) {
 		this.num = num;
 	}

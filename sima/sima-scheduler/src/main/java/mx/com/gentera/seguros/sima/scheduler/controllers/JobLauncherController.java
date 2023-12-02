@@ -33,6 +33,7 @@ public class JobLauncherController {
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<List<JobExecutionsHistory>> getJobExecutionsHistory(@PathVariable("jobName") String jobName)
 			throws Exception {
+
 		List<JobExecutionsHistory> lstJobExecutionsHistory = this.serverService.getAllJobExecutionsHistory(jobName);
 		return ResponseEntity.ok(lstJobExecutionsHistory);
 	}
@@ -40,6 +41,7 @@ public class JobLauncherController {
 	@RequestMapping(value = { "/{jobName}/start" }, method = { RequestMethod.GET })
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<MsgResponse> startScheduledJob(@PathVariable("jobName") String jobName) throws Exception {
+
 		log.info("Iniciando programación del job {} por peticiREST", jobName);
 		MsgResponse msgResponse = this.schedulerTasks.startScheduledJob(jobName);
 		return ResponseEntity.ok(msgResponse);
@@ -48,6 +50,7 @@ public class JobLauncherController {
 	@RequestMapping(value = { "/{jobName}/stop" }, method = { RequestMethod.GET })
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<MsgResponse> stopScheduledJob(@PathVariable("jobName") String jobName) throws Exception {
+
 		log.info("Deteniendo programación del job {} por peticiREST", jobName);
 		MsgResponse msgResponse = this.schedulerTasks.stopScheduledJob(jobName);
 		return ResponseEntity.ok(msgResponse);
@@ -56,6 +59,7 @@ public class JobLauncherController {
 	@RequestMapping(value = { "/{jobName}/execute" }, method = { RequestMethod.GET })
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<MsgResponse> executeJob(@PathVariable("jobName") String jobName) throws Exception {
+
 		log.info("Iniciando la ejecución del job {} por peticiREST", jobName);
 		MsgResponse msgResponse = this.schedulerTasks.executeJob(jobName);
 		return ResponseEntity.ok(msgResponse);
@@ -65,6 +69,7 @@ public class JobLauncherController {
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<MsgResponse> retryJob(@PathVariable("jobName") String jobName,
 			@PathVariable("uuid") String uuid) throws Exception {
+
 		log.info("Iniciando de nueva cuenta la ejecucidel job {} con uuid {} por peticiREST", jobName, uuid);
 		MsgResponse msgResponse = this.schedulerTasks.retryJob(jobName, uuid);
 		return ResponseEntity.ok(msgResponse);
@@ -74,6 +79,7 @@ public class JobLauncherController {
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<List<JobProperty>> getJobProperties(@PathVariable("jobName") String jobName)
 			throws Exception {
+
 		log.info("Obteniendo la configuracidel job {} por peticiREST", jobName);
 		List<JobProperty> lstJobProperties = this.schedulerTasks.getJobProperties(jobName);
 		return ResponseEntity.ok(lstJobProperties);
@@ -83,6 +89,7 @@ public class JobLauncherController {
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<List<JobProperty>> saveJobProperties(@PathVariable("jobName") String jobName,
 			@RequestBody List<JobProperty> lstJobProperties) throws Exception {
+
 		log.info("Almacenando la configuracidel job {} por peticiREST", jobName);
 		List<JobProperty> newLstJobProperties = this.schedulerTasks.saveJobProperties(jobName, lstJobProperties);
 		return ResponseEntity.ok(newLstJobProperties);

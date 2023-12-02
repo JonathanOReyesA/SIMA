@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class WebConfig {
+	
+	
 	@Bean
 	@ConfigurationProperties(prefix = "api.server.scheduler")
 	public ApiPropertiesBean apiSchedulerBean() {

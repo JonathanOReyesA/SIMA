@@ -1,0 +1,398 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="WFCUM" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<xsd:schema targetNamespace="http://tempuri.org/Imports">
+<xsd:import schemaLocation="http://ggalphad095.compartamos.mx:5001/WFCUM_.WFCUM.svc?xsd=xsd2"/>
+<xsd:import schemaLocation="http://ggalphad095.compartamos.mx:5001/WFCUM_.WFCUM.svc?xsd=xsd3" namespace="http://tempuri.org/"/>
+<xsd:import schemaLocation="http://ggalphad095.compartamos.mx:5001/WFCUM_.WFCUM.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xsd:import schemaLocation="http://ggalphad095.compartamos.mx:5001/WFCUM_.WFCUM.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/CMessage"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="CRequestUM">
+<wsdl:part name="MessageContent" element="MessageContent"/>
+</wsdl:message>
+<wsdl:message name="CRequestUM_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponseUM">
+<wsdl:part name="parameters" element="tns:ResponseUm"/>
+</wsdl:message>
+<wsdl:message name="CResponseUM_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CRequestEmpresas">
+<wsdl:part name="MessageEmpresa" element="MessageEmpresa"/>
+</wsdl:message>
+<wsdl:message name="CRequestEmpresas_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponseEmpresas">
+<wsdl:part name="parameters" element="tns:ResponseEmpresas"/>
+</wsdl:message>
+<wsdl:message name="CResponseEmpresas_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CRequestPerfiles">
+<wsdl:part name="MessagePerfiles" element="MessagePerfiles"/>
+</wsdl:message>
+<wsdl:message name="CRequestPerfiles_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponsePerfiles">
+<wsdl:part name="parameters" element="tns:ResponsePerfiles"/>
+</wsdl:message>
+<wsdl:message name="CResponsePerfiles_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CRequestAdmUsuarios">
+<wsdl:part name="AdmUsuario" element="AdmUsuario"/>
+</wsdl:message>
+<wsdl:message name="CRequestAdmUsuarios_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponseAdmUsuarios">
+<wsdl:part name="parameters" element="tns:ResponseAdmUsuario"/>
+</wsdl:message>
+<wsdl:message name="CResponseAdmUsuarios_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CRequestGetUsuarios">
+<wsdl:part name="MessageUsuarios" element="MessageUsuarios"/>
+</wsdl:message>
+<wsdl:message name="CRequestGetUsuarios_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponseGetUsuarios">
+<wsdl:part name="parameters" element="tns:ResponseGetUsuarios"/>
+</wsdl:message>
+<wsdl:message name="CResponseGetUsuarios_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CRequestSistemas">
+<wsdl:part name="MessaheSistemas" element="MessaheSistemas"/>
+</wsdl:message>
+<wsdl:message name="CRequestSistemas_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:message name="CResponseSistema">
+<wsdl:part name="parameters" element="tns:AdminSistema"/>
+</wsdl:message>
+<wsdl:message name="CResponseSistema_Headers">
+<wsdl:part name="CreationDateTime" element="tns:CreationDateTime"/>
+<wsdl:part name="ID" element="tns:ID"/>
+<wsdl:part name="RecipientBusinessSystemID" element="tns:RecipientBusinessSystemID"/>
+<wsdl:part name="recipientContact" element="tns:RecipientParty"/>
+<wsdl:part name="ReferenceID" element="tns:ReferenceID"/>
+<wsdl:part name="ReferenceUUID" element="tns:ReferenceUUID"/>
+<wsdl:part name="SenderBusinessSystemID" element="tns:SenderBusinessSystemID"/>
+<wsdl:part name="senderContact" element="tns:SenderParty"/>
+<wsdl:part name="TestDataIndicator" element="tns:TestDataIndicator"/>
+<wsdl:part name="UUID" element="tns:UUID"/>
+</wsdl:message>
+<wsdl:portType name="IWFCUM">
+<wsdl:operation name="validaUsuario">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/validaUsuario" name="CRequestUM" message="tns:CRequestUM"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/validaUsuarioResponse" name="CResponseUM" message="tns:CResponseUM"/>
+</wsdl:operation>
+<wsdl:operation name="listadoEmpresas">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/listadoEmpresas" name="CRequestEmpresas" message="tns:CRequestEmpresas"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/listadoEmpresasResponse" name="CResponseEmpresas" message="tns:CResponseEmpresas"/>
+</wsdl:operation>
+<wsdl:operation name="listadoPerfiles">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/listadoPerfiles" name="CRequestPerfiles" message="tns:CRequestPerfiles"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/listadoPerfilesResponse" name="CResponsePerfiles" message="tns:CResponsePerfiles"/>
+</wsdl:operation>
+<wsdl:operation name="AdministracionUsuario">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/AdministracionUsuario" name="CRequestAdmUsuarios" message="tns:CRequestAdmUsuarios"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/AdministracionUsuarioResponse" name="CResponseAdmUsuarios" message="tns:CResponseAdmUsuarios"/>
+</wsdl:operation>
+<wsdl:operation name="GetUsuariosEmpresa">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/GetUsuariosEmpresa" name="CRequestGetUsuarios" message="tns:CRequestGetUsuarios"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/GetUsuariosEmpresaResponse" name="CResponseGetUsuarios" message="tns:CResponseGetUsuarios"/>
+</wsdl:operation>
+<wsdl:operation name="AdminSistema">
+<wsdl:input wsaw:Action="http://tempuri.org/IWFCUM/AdminSistema" name="CRequestSistemas" message="tns:CRequestSistemas"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IWFCUM/AdminSistemaResponse" name="CResponseSistema" message="tns:CResponseSistema"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_IWFCUM" type="tns:IWFCUM">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="validaUsuario">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/validaUsuario" style="document"/>
+<wsdl:input name="CRequestUM">
+<soap:header message="tns:CRequestUM_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestUM_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponseUM">
+<soap:header message="tns:CResponseUM_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponseUM_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="listadoEmpresas">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/listadoEmpresas" style="document"/>
+<wsdl:input name="CRequestEmpresas">
+<soap:header message="tns:CRequestEmpresas_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestEmpresas_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponseEmpresas">
+<soap:header message="tns:CResponseEmpresas_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponseEmpresas_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="listadoPerfiles">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/listadoPerfiles" style="document"/>
+<wsdl:input name="CRequestPerfiles">
+<soap:header message="tns:CRequestPerfiles_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestPerfiles_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponsePerfiles">
+<soap:header message="tns:CResponsePerfiles_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponsePerfiles_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AdministracionUsuario">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/AdministracionUsuario" style="document"/>
+<wsdl:input name="CRequestAdmUsuarios">
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestAdmUsuarios_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponseAdmUsuarios">
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponseAdmUsuarios_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetUsuariosEmpresa">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/GetUsuariosEmpresa" style="document"/>
+<wsdl:input name="CRequestGetUsuarios">
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestGetUsuarios_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponseGetUsuarios">
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponseGetUsuarios_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AdminSistema">
+<soap:operation soapAction="http://tempuri.org/IWFCUM/AdminSistema" style="document"/>
+<wsdl:input name="CRequestSistemas">
+<soap:header message="tns:CRequestSistemas_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CRequestSistemas_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="CResponseSistema">
+<soap:header message="tns:CResponseSistema_Headers" part="CreationDateTime" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="ID" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="RecipientBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="recipientContact" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="ReferenceID" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="ReferenceUUID" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="SenderBusinessSystemID" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="senderContact" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="TestDataIndicator" use="literal"/>
+<soap:header message="tns:CResponseSistema_Headers" part="UUID" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WFCUM">
+<wsdl:port name="BasicHttpBinding_IWFCUM" binding="tns:BasicHttpBinding_IWFCUM">
+<soap:address location="http://ggalphad095.compartamos.mx:5001/WFCUM_.WFCUM.svc"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -60,7 +60,7 @@ import mx.com.gentera.seguros.sima.web.request.SearchInsurance;
 import mx.com.gentera.seguros.sima.web.security.CustomUser;
 import mx.com.gentera.seguros.sima.web.security.Menu;
 import mx.com.gentera.seguros.sima.web.security.Role;
-import mx.com.gentera.seguros.sima.web.services.IServerService;
+//import mx.com.gentera.seguros.sima.web.services.IServerService;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -142,6 +142,7 @@ public class ServerServiceImpl implements IServerService {
 	public List<Insurance> searchAllInsurance(SearchInsurance request)
 			throws StoredProcedureConfigurationNotFoundException, StoredProcedureParametersNotMatchException,
 			StoredProcedureParametersTypesMismatchException, UnexpectedResponseCodeException {
+		
 		List<Insurance> lstInsuranceItem = new ArrayList<>();
 		List<Object> values = new ArrayList<Object>();
 		values.add(request.getIdSolicitud());
@@ -152,7 +153,7 @@ public class ServerServiceImpl implements IServerService {
 		values.add(request.getaMaterno());
 		try {
 			if (request.getFechaNacimiento() != "" && request.getFechaNacimiento() != null) {
-				values.add(new Date((new Date(request.getFechaNacimiento())).getTime()));
+				values.add(new java.sql.Date((new Date(request.getFechaNacimiento())).getTime()));
 			} else {
 				values.add(null);
 			}

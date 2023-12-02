@@ -7,42 +7,30 @@ import org.springframework.security.core.GrantedAuthority;
 public class Role implements GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;
+
 	private String name;
 	private List<Permission> permissions;
 
-	 public Role(String name) {
-		    this.name = name;
-		  }
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
+	public Role(String name) {
+		this.name = name;
 	}
 
-	/**
-	 * @param name the name to set
-	 */
+	public String getName() {
+		return this.name;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/**
-	 * @return the permissions
-	 */
 	public List<Permission> getPermissions() {
-		return permissions;
+		return this.permissions;
 	}
 
-	/**
-	 * @param permissions the permissions to set
-	 */
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
 	}
 
-	@Override
 	public String getAuthority() {
 		return this.name;
 	}
@@ -51,7 +39,5 @@ public class Role implements GrantedAuthority {
 	public String toString() {
 		return "Role [name=" + name + ", permissions=" + permissions + "]";
 	}
-	
-	
 
 }

@@ -1,0 +1,121 @@
+<div class="container-fluid" ng-init="getLstJobExecutionsHistory(); disconnect();" ng-cloak>
+	<div class="card mb-3">
+		<div class="card-header">
+			<h5><i class="fa fa-fw fa-dashboard"></i><span class="nav-link-text"> Dashboard</span></h5>
+		</div>
+		<div class="card-body">
+			<div class="alert alert-{{alertType}}" ng-show="alertType">
+				<strong>{{alertMessage}}</strong>
+			</div>
+			<div class="card-columns">
+				<div class="card border-dark" ng-repeat="job in lstJobExecutionsHistory">
+					<div class="card-header text-white" ng-class="{'bg-azul': job.scheduled, 'bg-secondary': !job.scheduled}">
+						<div class="d-flex flex-wrap justify-content-between">
+							<div class="col-md-6">
+								<h5>{{job.nameCron}}</h5>
+							</div>
+							<div class="col-md-6">
+								<div class="btn-group d-flex flex-wrap justify-content-end" role="group" aria-label="Actions">
+									<button type="button" class="btn btn-sm" ng-class="{'bg-light': job.scheduled, 'btn-secondary': !job.scheduled}" ng-click="stop(job.jobName)" ng-show="job.scheduled">
+										<i class="fa fa-fw fa-toggle-on"></i>
+									</button>
+									<button type="button" class="btn btn-sm" ng-class="{'btn-info': job.scheduled, 'btn-secondary': !job.scheduled}" ng-click="start(job.jobName)" ng-show="!job.scheduled">
+										<i class="fa fa-fw fa-toggle-off"></i>
+									</button>
+									<button type="button" class="btn btn-sm" ng-class="{'btn-info': job.scheduled, 'btn-secondary': !job.scheduled}" ng-click="execute(job.jobName)">
+										<i class="fa fa-fw fa-play"></i>
+									</button>
+									<button type="button" class="btn btn-sm" ng-class="{'btn-info': job.scheduled, 'btn-secondary': !job.scheduled}" ng-click="toggleJobName(job.jobName)">
+										<i class="fa fa-fw fa-info"></i>
+									</button>
+									<button type="button" class="btn btn-sm" ng-class="{'btn-info': job.scheduled, 'btn-secondary': !job.scheduled}"
+										data-toggle="modal" data-target="#documentModal"
+										data-name="{{job.jobName}}" data-properties="{{job.cronExpression}}">
+										<i class="fa fa-fw fa-wrench"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="card-body">
+						<div class="d-flex flex-column align-items-center">
+							<div class="p-2" ng-show="job.scheduled"> 
+								<h6>Next date: <b>{{job.nextStartDate}}</b></h6>
+							</div>
+							<h6 class="card-title" ng-if="job.lstJobExecution.length == 0" 
+								ng-class="{'text-success': job.lastJobExecution.lastStepExecution.exitStatus == 'COMPLETED', 'text-danger': job.lastJobExecution.lastStepExecution.exitStatus == 'FAILED', 'text-warning': job.lastJobExecution.lastStepExecution.exitStatus == 'NOOP'}">
+								Last Execution: <b>{{job.lastJobExecution.startDateStr}}	[{{job.lastJobExecution.lastStepExecution.exitStatus}}]</b>
+							</h6>
+						</div>
+						<div class="d-flex flex-wrap justify-content-between" ng-if="job.lstJobExecution.length > 0">
+							<div class="table-responsive">
+				  				<table class="table table-sm" style="font-size:80%">
+				  					<thead>
+									    <tr>
+									    	<th scope="col">Id</th>
+										    <th scope="col">Start Date</th>
+										    <th scope="col">End Date</th>
+										    <th scope="col">Status</th>
+										    <th scope="col">Retry</th>
+									    </tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="execution in job.lstJobExecution">
+								     		<th scope="row">...{{execution.uuidSlim}}</th>
+								     		<td>{{execution.startDateStr}}</td>
+								     		<td>{{execution.endDateStr}}</td>
+								     		<td ng-class="{'completed': execution.exitStatus == 'COMPLETED', 'failed': execution.exitStatus == 'FAILED', 'noop': execution.exitStatus == 'NOOP'}"
+								     			data-toggle="tooltip" data-placement="top" title="{{execution.exitDescription}}"><b>{{execution.exitStatus}}</b></td>
+								     		<td>
+									     		<button type="button" class="btn btn-warning btn-sm" ng-click="retry(job.jobName, execution.uuid)" ng-if="execution.exitStatus == 'FAILED'">
+													<i class="fa fa-fw fa-play"></i>
+												</button>
+											</td>
+								    	</tr>
+								    </tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="documentModalLabel" aria-hidden="true" ng-cloak>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="documentModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     		<div class="alert alert-{{alertModalType}}" ng-show="alertModalType">
+			<strong>{{alertModalMessage}}</strong>
+		</div>
+		<form name="jobPropertiesForm">
+			<div class="form-row">
+				<div class="form-group col-md-4" ng-repeat="property in lstJobProperties" ng-show="property.propertyEditable">
+					<label for="{{property.id.propertyName}}">{{property.id.propertyName}}</label>
+					<input type="text" id="{{property.id.propertyName}}" name="{{property.id.propertyName}}" 
+						ng-model="property.propertyValue" class="form-control" ng-required="true" />
+					<p style="font-size:70%">({{property.propertyDescription}})</p>
+				</div>
+			</div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="saveJobProperties()" ng-disabled="jobPropertiesForm.$invalid || jobPropertiesForm.$pristine")>Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page level plugin JavaScript-->
+<!-- Custom scripts for this page-->

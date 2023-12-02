@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/sima-web/">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="Gentera">
+<title>SIMA Web</title>
+
+
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<script src="vendor/jquery/jquery.blockUI.js" type="text/javascript"></script>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Angular JS-->
+<script src="vendor/angular/js/angular.min.js"></script>
+<script src="vendor/angular/js/angular-route.min.js"></script>
+
+<!-- ANGUULAR UPLOAD-->
+<script src="vendor/upload/angular-file-upload.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sima-web.js"></script>
+<script src="js/sima-consultaSeguro.js"></script>
+
+
+
+<!-- Bootstrap core CSS-->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom fonts for this template-->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<!-- Page level plugin CSS-->
+<link href="vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet">
+<!-- Custom styles for this template-->
+<link href="css/sima-web.css" rel="stylesheet">
+<link href="css/spinner.css" rel="stylesheet">
+<!-- Favicon -->
+<link href="images/favicon_aterna.ico" rel="shortcut icon"
+	type="image/x-icon">
+</head>
+
+<body ng-app="adminApp" ng-controller="navigationController"
+	ng-class="{'fixed-nav sticky-footer':authenticated}" id="page-top"
+	ng-cloak class="bg-azul">
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-azul fixed-top"
+		id="mainNav" ng-if="authenticated" ng-cloak>
+		<a class="navbar-brand" href="#dashboard">
+			<h4>Sima Web</h4>
+
+		</a>
+		<div id="spinner">
+			<div class="loader"></div>
+		</div>
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					ng-show="!authenticated" title="Ingresar"><a class="nav-link"
+					href="#login"> <i class="fa fa-fw fa-sign-in"></i> <span
+						class="nav-link-text">Ingresar</span>
+				</a></li>
+
+
+				<div ng-repeat="p in perfil">
+
+					<li class="nav-item" data-toggle="tooltip" data-placement="right"
+						ng-show="authenticated" title="Conciliar Seguros"><a
+						class="nav-link" href="{{p.name}}"> <i class="{{p.image}}"></i>
+							<span class="nav-link-text">{{p.descripcion}}</span>
+					</a></li>
+
+				</div>
+
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					ng-show="authenticated" title="Salir"><a class="nav-link"
+					data-toggle="modal" data-target="#logoutModal"> <i
+						class="fa fa-fw fa-sign-out"></i> <span class="nav-link-text">Salir</span>
+				</a></li>
+			</ul>
+			<ul class="navbar-nav sidenav-toggler">
+				<li class="nav-item"><a class="nav-link text-center"
+					id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
+				</a></li>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" ng-show="authenticated"><span
+					class="nav-link"><h5>Bienvenido: {{userName}}</h5></span></li>
+				<li class="nav-item" ng-show="authenticated && photo"><img
+					ng-src="data:image/JPEG;base64,{{photo}}" class="img-thumbnail"
+					alt="{{userName}}" style="height: 40px;"></li>
+				<!-- <li class="nav-item" ng-show="!authenticated"><a class="nav-link" href="#login"> <i class="fa fa-fw fa-sign-in"></i> Ingresar
+					</a></li>
+					<li class="nav-item" ng-show="authenticated"><a class="nav-link" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-fw fa-sign-out"></i> Salir -->
+				</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div
+		ng-class="{'content-wrapper':authenticated, 'content-wrapper-login':!authenticated}"
+		ng-cloak>
+		<div ng-view></div>
+	</div>
+
+	<footer
+		ng-class="{'sticky-footer':authenticated, 'sticky-footer-login':!authenticated}"
+		ng-cloak>
+		<div class="container">
+			<div class="text-center">
+				<small>Copyright © Gentera 2018</small>
+			</div>
+		</div>
+	</footer>
+	<!-- Logout Modal -->
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="logoutModalLabel" aria-hidden="true" ng-cloak>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="logoutModalLabel">¿Desea salir de
+						la aplicación?</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">Seleccione la opción "Salir" para
+					terminar su sesión actual.</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">Cancelar</button>
+					<a class="btn btn-primary bg-azul" href="" ng-click="logout()"
+						data-dismiss="modal">Salir</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

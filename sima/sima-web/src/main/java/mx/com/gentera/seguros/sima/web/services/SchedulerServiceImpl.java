@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import mx.com.gentera.seguros.common.persistence.entities.sima.JobProperty;
 import mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean;
-import mx.com.gentera.seguros.sima.web.controllers.SimaWebController;
+//import mx.com.gentera.seguros.sima.web.controllers.SimaWebController;
 import mx.com.gentera.seguros.sima.web.exceptions.ExecuteScheduledJobException;
 import mx.com.gentera.seguros.sima.web.exceptions.JobConfigurationNotExistsException;
 import mx.com.gentera.seguros.sima.web.exceptions.RetryScheduledJobException;
@@ -19,7 +19,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.MultiValueMap;
+//import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import java.nio.charset.Charset;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -31,18 +31,16 @@ import org.springframework.http.HttpHeaders;
 public class SchedulerServiceImpl implements ISchedulerService {
 
 	private static final Logger log = LoggerFactory.getLogger(SchedulerServiceImpl.class);
-	
+
 	@Autowired
 	ApiPropertiesBean apiSchedulerBean;
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public List<JobExecutionsHistory> findAllJobExecutionsHistory(String jobName) {
 		List<JobExecutionsHistory> lstJobExecutionsHistory = new ArrayList<>();
-		log.info("user: {}",this.apiSchedulerBean.getUser());
-		log.info("pass: {}",this.apiSchedulerBean.getPassword());
 		RestTemplate restTemplate = new RestTemplate();
-		HttpHeaders httpHeaders = new HttpHeaders() {
+		HttpHeaders headers = new HttpHeaders() {
 			{
 				String auth = String.valueOf(SchedulerServiceImpl.this.apiSchedulerBean.getUser()) + ":"
 						+ SchedulerServiceImpl.this.apiSchedulerBean.getPassword();
@@ -51,16 +49,18 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		
+
+		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/history/job/" + jobName);
+		log.info("httpsHeaders: {} ", headers.toString());
 		ResponseEntity<List<JobExecutionsHistory>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/history/job/" + jobName, HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<List<JobExecutionsHistory>>() {
+				new HttpEntity(headers), new ParameterizedTypeReference<List<JobExecutionsHistory>>() {
 				}, new Object[0]);
 		lstJobExecutionsHistory = (List<JobExecutionsHistory>) response.getBody();
 		return lstJobExecutionsHistory;
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public MsgResponse stop(String jobName) throws StopScheduledJobException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -73,16 +73,17 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/stop");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/stop", HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
+				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
 				}, new Object[0]);
-		if (((MsgResponse) response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
-			throw new StopScheduledJobException(((MsgResponse) response.getBody()).getDescription());
-		return (MsgResponse) response.getBody();
+		if ((response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
+			throw new StopScheduledJobException(( response.getBody()).getDescription());
+		return  response.getBody();
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public MsgResponse start(String jobName) throws StartScheduledJobException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -95,16 +96,17 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/start");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/start", HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
+				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
 				}, new Object[0]);
-		if (((MsgResponse) response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
-			throw new StartScheduledJobException(((MsgResponse) response.getBody()).getDescription());
-		return (MsgResponse) response.getBody();
+		if (( response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
+			throw new StartScheduledJobException(( response.getBody()).getDescription());
+		return  response.getBody();
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public MsgResponse execute(String jobName) throws ExecuteScheduledJobException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -117,16 +119,17 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/execute");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/execute", HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
+				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
 				}, new Object[0]);
-		if (((MsgResponse) response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
-			throw new ExecuteScheduledJobException(((MsgResponse) response.getBody()).getDescription());
-		return (MsgResponse) response.getBody();
+		if (( response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
+			throw new ExecuteScheduledJobException(( response.getBody()).getDescription());
+		return  response.getBody();
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public MsgResponse retry(String jobName, String uuid) throws RetryScheduledJobException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -139,16 +142,17 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/retry/");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/retry/" + uuid, HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
+				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
 				}, new Object[0]);
-		if (((MsgResponse) response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
-			throw new RetryScheduledJobException(((MsgResponse) response.getBody()).getDescription());
-		return (MsgResponse) response.getBody();
+		if (( response.getBody()).getCode().compareTo(Integer.valueOf(0)) != 0)
+			throw new RetryScheduledJobException(( response.getBody()).getDescription());
+		return  response.getBody();
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public List<JobProperty> getJobProperties(String jobName) throws JobConfigurationNotExistsException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -161,16 +165,17 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}, METODO: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/properties","GET");
 		ResponseEntity<List<JobProperty>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/properties", HttpMethod.GET,
-				new HttpEntity<HttpHeaders>(httpHeaders), new ParameterizedTypeReference<List<JobProperty>>() {
+				new HttpEntity(httpHeaders), new ParameterizedTypeReference<List<JobProperty>>() {
 				}, new Object[0]);
 		if (response.getBody() == null || (response.getBody() != null && (response.getBody()).isEmpty()))
 			throw new JobConfigurationNotExistsException("No existe configuración para el Job " + jobName);
-		return (List<JobProperty>) response.getBody();
+		return  response.getBody();
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 	@Override
 	public List<JobProperty> saveJobProperties(String jobName, List<JobProperty> lstJobProperties)
 			throws JobConfigurationNotExistsException {
@@ -184,13 +189,13 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
+		log.info("url: {}, METODO: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/properties","POST");
 		ResponseEntity<List<JobProperty>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/properties", HttpMethod.POST,
-				new HttpEntity<List<JobProperty>>(lstJobProperties, (MultiValueMap<String, String>) httpHeaders),
-				new ParameterizedTypeReference<List<JobProperty>>() {
+				new HttpEntity(lstJobProperties, httpHeaders), new ParameterizedTypeReference<List<JobProperty>>() {
 				}, new Object[0]);
-		if (response.getBody() == null || (response.getBody() != null && ( response.getBody()).isEmpty()))
+		if (response.getBody() == null || (response.getBody() != null && (response.getBody()).isEmpty()))
 			throw new JobConfigurationNotExistsException("No existe configuración para el Job " + jobName);
-		return (List<JobProperty>) response.getBody();
+		return response.getBody();
 	}
 }

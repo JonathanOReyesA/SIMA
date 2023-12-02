@@ -1,15 +1,19 @@
 package mx.com.gentera.seguros.sima.web.configuration;
 
-import javax.servlet.Filter;
+
+//import javax.servlet.Filter;
 import mx.com.gentera.seguros.sima.web.security.CsrfHeaderFilter;
 import mx.com.gentera.seguros.sima.web.security.CustomUser;
 import mx.com.gentera.seguros.sima.web.security.CustomUserDetailsContextMapper;
 import mx.com.gentera.seguros.sima.web.services.IServerService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.ldap.core.ContextSource;
+//import org.springframework.ldap.core.ContextSource;
 import org.springframework.ldap.core.support.BaseLdapPathContextSource;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,6 +37,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
 	@Autowired
 	IServerService serverService;
@@ -58,11 +64,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private static String REALM = "SIMA";
 
 	protected void configure(HttpSecurity http) throws Exception {
+		
 		http.csrf().disable().httpBasic().realmName(REALM).and().authorizeRequests()
 				.antMatchers(new String[] { "/api/**" }).authenticated().antMatchers(new String[] { "/**" }).permitAll()
 				.anyRequest().authenticated().and().logout().and().csrf().csrfTokenRepository(csrfTokenRepository())
 				.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-				.invalidSessionUrl("/").and().addFilterAfter((Filter) new CsrfHeaderFilter(), CsrfFilter.class);
+				.invalidSessionUrl("/").and().addFilterAfter( new CsrfHeaderFilter(), CsrfFilter.class);
 	}
 
 	@Bean
@@ -94,10 +101,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 			@Override
 			public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-				CustomUser user = SecurityConfig.this.serverService.consultarServicioPrueba(authentication.getName(),
-						(String) authentication.getCredentials());
+				CustomUser user = SecurityConfig.this.serverService.consultarServicioPrueba(authentication.getName(), (String)authentication.getCredentials());
+			     log.info("user: {}",user.toString() );
 				Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
-				return new UsernamePasswordAuthenticationToken(user, "", authorities);
+				log.info("user autorities: {}",user.getAuthorities().toString() );
+			    return  new UsernamePasswordAuthenticationToken(user, "", authorities);
+			       
 			}
 
 			@Override
