@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD })
 public @interface SourceTableField {
+	
 	String name() default "";
 
 	boolean notNull() default false;

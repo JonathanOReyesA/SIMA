@@ -57,4 +57,10 @@ public class Insurance {
 
 	@SourceTableField(name = "TIPO_PAGO")
 	public String tipoPago;
+	
+	@SourceTableField(name = "NUM_FAMILIARES")
+	public String numeroFamiliares;
+	
+	@SourceTableField(name = "NAME_FILE")
+	public String nameFile;
 }
