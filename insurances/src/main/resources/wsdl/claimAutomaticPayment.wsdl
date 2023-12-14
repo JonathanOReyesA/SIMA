@@ -1,0 +1,55 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="claimAutomaticPayment">
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://gentera.com.mx/"
+				schemaLocation="http://10.130.5.169:8080/insurances/claimAutomaticPayment?xsd=1" />
+		</xsd:schema>
+	</types>
+	<message name="claimAutomaticPayment">
+		<part name="parameters" element="tns:claimAutomaticPayment" />
+	</message>
+	<message name="claimAutomaticPaymentResponse">
+		<part name="parameters"
+			element="tns:claimAutomaticPaymentResponse" />
+	</message>
+	<portType name="claimAutomaticPayment">
+		<operation name="claimAutomaticPayment">
+			<input
+				wsam:Action="http://gentera.com.mx/claimAutomaticPayment/claimAutomaticPaymentRequest"
+				message="tns:claimAutomaticPayment" />
+			<output
+				wsam:Action="http://gentera.com.mx/claimAutomaticPayment/claimAutomaticPaymentResponse"
+				message="tns:claimAutomaticPaymentResponse" />
+		</operation>
+	</portType>
+	<binding name="claimAutomaticPaymentPortBinding"
+		type="tns:claimAutomaticPayment">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="claimAutomaticPayment">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="claimAutomaticPayment">
+		<port name="claimAutomaticPaymentPort"
+			binding="tns:claimAutomaticPaymentPortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/insurances/claimAutomaticPayment" />
+		</port>
+	</service>
+</definitions>

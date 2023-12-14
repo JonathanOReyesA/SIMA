@@ -61,6 +61,6 @@ public class Insurance {
 	@SourceTableField(name = "NUM_FAMILIARES")
 	public String numeroFamiliares;
 	
-	@SourceTableField(name = "NAME_FILE")
+	@SourceTableField(name = "NOM_ARCHIVO")
 	public String nameFile;
 }

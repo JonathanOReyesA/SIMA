@@ -1,0 +1,129 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.pe/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.pe/" name="claimAutomaticPaymentPE">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://gentera.com.pe/"
+			targetNamespace="http://gentera.com.pe/" version="1.0">
+			<xs:element name="claimAutomaticPayment"
+				type="tns:claimAutomaticPayment" />
+			<xs:element name="claimAutomaticPaymentResponse"
+				type="tns:claimAutomaticPaymentResponse" />
+			<xs:complexType name="claimAutomaticPayment">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="filePath"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="fileName"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="partnerID"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="userID" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimAutomaticPaymentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return"
+						type="tns:claimInsurancePaymentResMsgDataTypePE" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="claimInsurancePaymentResMsgDataTypePE">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="claimInsurancePaymentArray" nillable="true"
+						type="tns:claimInsuranceDetailDataTypePNEPE" />
+					<xs:element name="paymentsFileTotal" type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="claimInsuranceDetailDataTypePNEPE">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="beneficiaryAddress"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="beneficiaryName"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="beneficiaryPhone"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="businessPartnerID"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="certificateNumber"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="claimID"
+						type="xs:string" />
+					<xs:element name="daysToPay" type="xs:int" />
+					<xs:element minOccurs="0" name="externalClaimID"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="flag" type="xs:string" />
+					<xs:element minOccurs="0" name="instanceClaimID"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="insuredName"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="maritalStatus"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="marriedFamilyName"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="message"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="odpFormat"
+						type="xs:string" />
+					<xs:element name="paymentAmount" type="xs:double" />
+					<xs:element minOccurs="0" name="paymentDate"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="paymentOrder"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="policyID"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="status" type="xs:string" />
+					<xs:element minOccurs="0" name="zone" type="xs:string" />
+					<xs:element minOccurs="0" name="flagCoverage"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="claimAutomaticPayment">
+		<part name="parameters" element="tns:claimAutomaticPayment" />
+	</message>
+	<message name="claimAutomaticPaymentResponse">
+		<part name="parameters"
+			element="tns:claimAutomaticPaymentResponse" />
+	</message>
+	<portType name="claimAutomaticPaymentPE">
+		<operation name="claimAutomaticPayment">
+			<input
+				wsam:Action="http://gentera.com.pe/claimAutomaticPaymentPE/claimAutomaticPaymentRequest"
+				message="tns:claimAutomaticPayment" />
+			<output
+				wsam:Action="http://gentera.com.pe/claimAutomaticPaymentPE/claimAutomaticPaymentResponse"
+				message="tns:claimAutomaticPaymentResponse" />
+		</operation>
+	</portType>
+	<binding name="claimAutomaticPaymentPEPortBinding"
+		type="tns:claimAutomaticPaymentPE">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="claimAutomaticPayment">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="claimAutomaticPaymentPE">
+		<port name="claimAutomaticPaymentPEPort"
+			binding="tns:claimAutomaticPaymentPEPortBinding">
+			<soap:address
+				location="http://172.18.46.1:8080/insurances/claimAutomaticPaymentPE" />
+		</port>
+	</service>
+</definitions>

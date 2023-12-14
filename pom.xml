@@ -24,5 +24,6 @@
 		<module>common</module>
 		<module>medicos</module>
 		<module>sima</module>
+		<module>insurances</module>
 	</modules>
 </project>

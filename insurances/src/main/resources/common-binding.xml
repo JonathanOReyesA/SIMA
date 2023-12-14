@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<globalBindings>
+		<javaType name="java.util.Date" xmlType="xs:date"
+			parseMethod="com.gentera.adapters.DateAdapter.unmarshal"
+			printMethod="com.gentera.adapters.DateAdapter.marshal" />
+		<javaType name="java.util.Date" xmlType="xs:dateTime"
+			parseMethod="com.gentera.adapters.DateAdapter.unmarshal"
+			printMethod="com.gentera.adapters.DateAdapter.marshal" />
+			
+			<javaType name="java.lang.Integer" xmlType="xs:int"
+			parseMethod="com.gentera.adapters.DateAdapter.unmarshalInt"
+			printMethod="com.gentera.adapters.DateAdapter.marshalInt" />
+			
+			<javaType name="java.lang.Double" xmlType="xs:double"
+			parseMethod="com.gentera.adapters.DateAdapter.unmarshalDou"
+			printMethod="com.gentera.adapters.DateAdapter.marshalDou" />
+			
+	</globalBindings>
+
+</bindings>

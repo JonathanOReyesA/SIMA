@@ -1,0 +1,90 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.pe/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.pe/" name="getAmountToPayPE">
+
+	<types>
+		<xs:schema xmlns:tns="http://gentera.com.pe/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" 
+		targetNamespace="http://gentera.com.pe/">
+        <!-- Element -->
+        <xs:element name="getAmountToPay" type="tns:getAmountToPay"/>
+        <xs:element name="getAmountToPayResponse" type="tns:getAmountToPayResponse"/>
+
+			<!-- Request -->
+			<xs:complexType name="getAmountToPay">
+				<xs:sequence>
+					<xs:element name="insuranceID" type="xs:string" />
+					<xs:element name="businessPartnerID" type="xs:string" />
+					<xs:element name="productID" type="xs:string" />
+					<xs:element name="coverageID" type="xs:string" />
+					<xs:element name="flagCoverage" type="xs:string" />
+					<xs:element name="claimDays" type="xs:double" />
+					<xs:element name="initialDate" type="xs:string" />
+					<xs:element name="endDate" type="xs:string" />
+					<xs:element name="partnerID" type="xs:string" />
+					<xs:element name="claimAmount" type="xs:double" />
+					<xs:element name="claimID" type="xs:string" />
+					<xs:element name="pAffected" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<!-- Response -->
+			<xs:complexType name="getAmountToPayResponse">
+				<xs:sequence>
+					<xs:element name="return"
+						type="tns:amountToPayQueryRespMsgDataType" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="amountToPayQueryRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="calcDays" type="xs:double" />
+					<xs:element name="code" type="xs:string" />
+					<xs:element name="message" type="xs:string" />
+					<xs:element name="remaining" type="xs:double" />
+					<xs:element name="returnValue" type="xs:double" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="getAmountToPay">
+		<part name="getAmountToPay" element="tns:getAmountToPay"></part>
+	</message>
+	<message name="getAmountToPayResponse">
+		<part name="parameters" element="tns:getAmountToPayResponse"></part>
+	</message>
+	<portType name="getAmountToPayPE">
+		<operation name="getAmountToPay">
+			<input wsam:Action="http://gentera.com.pe/getAmountToPayPE/getAmountToPayRequest"
+			message="tns:getAmountToPay">
+			</input>
+			<output wsam:Action="http://gentera.com.pe/getAmountToPayPE/getAmountToPayResponse"
+			message="tns:getAmountToPayResponse">
+			</output>
+		</operation>
+	</portType>
+	<binding name="getAmountToPayPEPortBinding" type="tns:getAmountToPayPE">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+		<operation name="getAmountToPay">
+			<soap:operation
+				soapAction=""/>
+			<input >
+				<soap:body use="literal" />
+			</input>
+			<output >
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="getAmountToPayPE">
+		<port binding="tns:getAmountToPayPEPortBinding"
+			name="getAmountToPayPEPort">
+			<soap:address
+				location="http://172.18.46.1:8080/insurances/getAmountToPayPE" />
+		</port>
+	</service>
+</definitions>
