@@ -80,7 +80,6 @@ public class ClaimsSearchCertificateEndpoint implements ClaimsSearchCertificate 
 							}
 							return item;
 						}
-
 					});
 			response.getSearchClaimsCertificateList()
 					.addAll((Collection) callSPResponse.getResult().get("SYS_REFCURSOR"));

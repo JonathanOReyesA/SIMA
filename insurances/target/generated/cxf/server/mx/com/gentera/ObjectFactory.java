@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetAffectedName_QNAME = new QName("http://gentera.com.mx/", "getAffectedName");
-    private final static QName _GetAffectedNameResponse_QNAME = new QName("http://gentera.com.mx/", "getAffectedNameResponse");
+    private final static QName _ClaimStatusCatalogue_QNAME = new QName("http://gentera.com.mx/", "claimStatusCatalogue");
+    private final static QName _ClaimStatusCatalogueResponse_QNAME = new QName("http://gentera.com.mx/", "claimStatusCatalogueResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: mx.com.gentera
@@ -35,45 +35,53 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAffectedName_Type }
+     * Create an instance of {@link ClaimStatusCatalogue_Type }
      * 
      */
-    public GetAffectedName_Type createGetAffectedName_Type() {
-        return new GetAffectedName_Type();
+    public ClaimStatusCatalogue_Type createClaimStatusCatalogue_Type() {
+        return new ClaimStatusCatalogue_Type();
     }
 
     /**
-     * Create an instance of {@link GetAffectedNameResponse }
+     * Create an instance of {@link ClaimStatusCatalogueResponse }
      * 
      */
-    public GetAffectedNameResponse createGetAffectedNameResponse() {
-        return new GetAffectedNameResponse();
+    public ClaimStatusCatalogueResponse createClaimStatusCatalogueResponse() {
+        return new ClaimStatusCatalogueResponse();
     }
 
     /**
-     * Create an instance of {@link GetAffectedResponse }
+     * Create an instance of {@link ClaimStatusCatalogueRespMsgDataType }
      * 
      */
-    public GetAffectedResponse createGetAffectedResponse() {
-        return new GetAffectedResponse();
+    public ClaimStatusCatalogueRespMsgDataType createClaimStatusCatalogueRespMsgDataType() {
+        return new ClaimStatusCatalogueRespMsgDataType();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAffectedName_Type }{@code >}}
+     * Create an instance of {@link ClaimStatusDataType }
      * 
      */
-    @XmlElementDecl(namespace = "http://gentera.com.mx/", name = "getAffectedName")
-    public JAXBElement<GetAffectedName_Type> createGetAffectedName(GetAffectedName_Type value) {
-        return new JAXBElement<GetAffectedName_Type>(_GetAffectedName_QNAME, GetAffectedName_Type.class, null, value);
+    public ClaimStatusDataType createClaimStatusDataType() {
+        return new ClaimStatusDataType();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAffectedNameResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ClaimStatusCatalogue_Type }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://gentera.com.mx/", name = "getAffectedNameResponse")
-    public JAXBElement<GetAffectedNameResponse> createGetAffectedNameResponse(GetAffectedNameResponse value) {
-        return new JAXBElement<GetAffectedNameResponse>(_GetAffectedNameResponse_QNAME, GetAffectedNameResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://gentera.com.mx/", name = "claimStatusCatalogue")
+    public JAXBElement<ClaimStatusCatalogue_Type> createClaimStatusCatalogue(ClaimStatusCatalogue_Type value) {
+        return new JAXBElement<ClaimStatusCatalogue_Type>(_ClaimStatusCatalogue_QNAME, ClaimStatusCatalogue_Type.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ClaimStatusCatalogueResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://gentera.com.mx/", name = "claimStatusCatalogueResponse")
+    public JAXBElement<ClaimStatusCatalogueResponse> createClaimStatusCatalogueResponse(ClaimStatusCatalogueResponse value) {
+        return new JAXBElement<ClaimStatusCatalogueResponse>(_ClaimStatusCatalogueResponse_QNAME, ClaimStatusCatalogueResponse.class, null, value);
     }
 
 }

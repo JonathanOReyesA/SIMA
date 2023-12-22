@@ -61,6 +61,7 @@
 					<xs:element name="postalCode" type="xs:string" minOccurs="0" />
 					<xs:element name="regionName" type="xs:string" minOccurs="0" />
 					<xs:element name="relationshipName" type="xs:string" minOccurs="0" />
+					<xs:element name="relationshipCode" type="xs:string" minOccurs="0" />
 					<xs:element name="roleName" type="xs:string" minOccurs="0" />
 					<xs:element name="streetName" type="xs:string" minOccurs="0" />
 					<xs:element name="taxID" type="xs:string" minOccurs="0" />

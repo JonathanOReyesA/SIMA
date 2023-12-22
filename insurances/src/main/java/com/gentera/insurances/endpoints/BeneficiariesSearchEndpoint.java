@@ -28,10 +28,10 @@ public class BeneficiariesSearchEndpoint implements BeneficiariesSearch {
 	IPersistenceService persistenceService;
 
 	@SuppressWarnings("unchecked")
-	public BeneficiariesSeachRespMsgDataType beneficiariesSearch(String insuranceID, String mode, String coverageID,
-			String partnerID) {
+	public BeneficiariesSeachRespMsgDataType beneficiariesSearch(String insuranceID,String mode, String coverageID,
+			String partnerID,String affectedID) {
 		logger.info("Se recibio una peticion del id {} para el  servicio {}", insuranceID, "BeneficiariesSearch");
-		logger.info("Peticion con datos {},{},{},{}", new Object[] { insuranceID, mode, coverageID, partnerID });
+		logger.info("Peticion con datos {},{},{},{},{}", new Object[] { insuranceID, mode, coverageID, partnerID,affectedID });
 		CallSPResponse callSPResponse = new CallSPResponse();
 		BeneficiariesSeachRespMsgDataType response = new BeneficiariesSeachRespMsgDataType();
 		List<Object> values = new ArrayList<Object>();
@@ -39,6 +39,7 @@ public class BeneficiariesSearchEndpoint implements BeneficiariesSearch {
 		values.add(mode);
 		values.add(coverageID);
 		values.add(partnerID);
+		values.add(affectedID);
 		try {
 			callSPResponse = this.persistenceService.executeFunction_SIMA(
 					this.beneficiariesSearchEndpointBean.getStoredProcedureName(), values,

@@ -4,7 +4,7 @@
     {
       "sourceType": "mx.com.gentera.seguros.sima.web.configuration.WebConfig",
       "name": "api.server.scheduler",
-      "sourceMethod": "apiSchedulerBean()",
+      "sourceMethod": "public mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean apiSchedulerBean() ",
       "type": "mx.com.gentera.seguros.sima.web.beans.ApiPropertiesBean"
     }
   ],

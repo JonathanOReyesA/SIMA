@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="mode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="coverageID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="partnerID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="affectedID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,7 +34,8 @@ import javax.xml.bind.annotation.XmlType;
     "insuranceID",
     "mode",
     "coverageID",
-    "partnerID"
+    "partnerID",
+    "affectedID"
 })
 public class BeneficiariesSearch_Type {
 
@@ -41,6 +43,7 @@ public class BeneficiariesSearch_Type {
     protected String mode;
     protected String coverageID;
     protected String partnerID;
+    protected String affectedID;
 
     /**
      * Obtiene el valor de la propiedad insuranceID.
@@ -136,6 +139,30 @@ public class BeneficiariesSearch_Type {
      */
     public void setPartnerID(String value) {
         this.partnerID = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad affectedID.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAffectedID() {
+        return affectedID;
+    }
+
+    /**
+     * Define el valor de la propiedad affectedID.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAffectedID(String value) {
+        this.affectedID = value;
     }
 
 }

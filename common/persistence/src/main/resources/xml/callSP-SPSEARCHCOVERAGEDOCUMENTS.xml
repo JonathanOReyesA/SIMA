@@ -9,5 +9,9 @@
   	<parameterName>P_COVERAGECATALOGUEID</parameterName>
   	<typeParameter>VARCHAR</typeParameter>
   </parameter>
+  <parameter>
+  	<parameterName>P_RELATIONSHIPCODE</parameterName>
+  	<typeParameter>VARCHAR</typeParameter>
+  </parameter>
 
 </callSP>

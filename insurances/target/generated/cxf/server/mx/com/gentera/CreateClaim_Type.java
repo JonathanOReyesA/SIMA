@@ -38,6 +38,7 @@ import org.w3._2001.xmlschema.Adapter4;
  *         &lt;element name="initialDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="claimPaymentType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="medicoID" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *         &lt;element name="partnerID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -65,6 +66,7 @@ import org.w3._2001.xmlschema.Adapter4;
     "initialDate",
     "endDate",
     "claimPaymentType",
+    "medicoID",
     "partnerID"
 })
 public class CreateClaim_Type {
@@ -97,6 +99,10 @@ public class CreateClaim_Type {
     protected String initialDate;
     protected String endDate;
     protected String claimPaymentType;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "int")
+    protected Integer medicoID;
     protected String partnerID;
 
     /**
@@ -481,6 +487,30 @@ public class CreateClaim_Type {
      */
     public void setClaimPaymentType(String value) {
         this.claimPaymentType = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad medicoID.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public Integer getMedicoID() {
+        return medicoID;
+    }
+
+    /**
+     * Define el valor de la propiedad medicoID.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMedicoID(Integer value) {
+        this.medicoID = value;
     }
 
     /**

@@ -42,6 +42,7 @@ import org.w3._2001.xmlschema.Adapter4;
  *         &lt;element name="postalCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="regionName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="relationshipName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="relationshipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="roleName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="streetName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="taxID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -78,6 +79,7 @@ import org.w3._2001.xmlschema.Adapter4;
     "postalCode",
     "regionName",
     "relationshipName",
+    "relationshipCode",
     "roleName",
     "streetName",
     "taxID",
@@ -113,6 +115,7 @@ public class RelationshipDataType {
     protected String postalCode;
     protected String regionName;
     protected String relationshipName;
+    protected String relationshipCode;
     protected String roleName;
     protected String streetName;
     protected String taxID;
@@ -581,6 +584,30 @@ public class RelationshipDataType {
      */
     public void setRelationshipName(String value) {
         this.relationshipName = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad relationshipCode.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRelationshipCode() {
+        return relationshipCode;
+    }
+
+    /**
+     * Define el valor de la propiedad relationshipCode.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRelationshipCode(String value) {
+        this.relationshipCode = value;
     }
 
     /**

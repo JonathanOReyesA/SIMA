@@ -8,6 +8,9 @@ import java.util.List;
 import mx.com.gentera.ClaimUpdate;
 import mx.com.gentera.ClaimUpdateRespMsgDataType;
 import mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureConfigurationNotFoundException;
+import mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureParametersNotMatchException;
+import mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureParametersTypesMismatchException;
+import mx.com.gentera.seguros.common.persistence.exceptions.UnexpectedResponseCodeException;
 import mx.com.gentera.seguros.common.persistence.model.CallSPResponse;
 import mx.com.gentera.seguros.common.persistence.services.IPersistenceService;
 import org.slf4j.Logger;
@@ -52,12 +55,14 @@ public class ClaimUpdateEndpoint implements ClaimUpdate {
 		try {
 			callSPResponse = this.persistenceService
 					.executeSP_SIMA(this.claimUpdateEndpointBean.getStoredProcedureName(), values, null);
-			response.setCode((String) callSPResponse.getResult().get("P_ERROR"));
+			logger.info(" CODE: {}",callSPResponse.getResult().get("P_ERROR"));
+			response.setCode("" + callSPResponse.getResult().get("P_ERROR"));
 			response.setMessage((String) callSPResponse.getResult().get("P_ERROR_DESC"));
+			
 		} catch (StoredProcedureConfigurationNotFoundException
-				| mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureParametersNotMatchException
-				| mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureParametersTypesMismatchException
-				| mx.com.gentera.seguros.common.persistence.exceptions.UnexpectedResponseCodeException e) {
+				| StoredProcedureParametersNotMatchException
+				| StoredProcedureParametersTypesMismatchException
+				| UnexpectedResponseCodeException e) {
 			callSPResponse.setCode(Integer.valueOf(-1));
 			callSPResponse.setDescription(e.getMessage());
 			logger.error("Error en el consumo de servicio UpdateBeneficiariesEndpoint: " + e.getMessage());

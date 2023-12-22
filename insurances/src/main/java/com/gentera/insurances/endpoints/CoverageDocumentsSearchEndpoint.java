@@ -29,13 +29,14 @@ public class CoverageDocumentsSearchEndpoint implements CoverageDocumentsSearch 
 	IPersistenceService persistenceService;
 
 	@SuppressWarnings("unchecked")
-	public CoverageDocumentsSearchRespMsgDataType coverageDocumentsSearch(String coverageCatalogueID) {
-		logger.info("Se recibio una peticion del id {} para el  servicio {}", coverageCatalogueID,
-				"CoverageDocumentsSearch");
+	public CoverageDocumentsSearchRespMsgDataType coverageDocumentsSearch(String coverageCatalogueID,String relationshipCode) {
+		logger.info("Se recibio una peticion del id {} para el  servicio {}", coverageCatalogueID, "CoverageDocumentsSearch");
+		logger.info("RelationshipCode: {}",relationshipCode); 
 		CallSPResponse callSPResponse = new CallSPResponse();
 		CoverageDocumentsSearchRespMsgDataType response = new CoverageDocumentsSearchRespMsgDataType();
 		List<Object> values = new ArrayList<Object>();
 		values.add(coverageCatalogueID);
+		values.add(relationshipCode);
 		String id = coverageCatalogueID;
 		try {
 			callSPResponse = persistenceService.executeFunction_SIMA(

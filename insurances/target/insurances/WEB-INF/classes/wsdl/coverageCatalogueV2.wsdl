@@ -1,0 +1,54 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://gentera.com.mx/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://gentera.com.mx/" name="coverageCatalogueV2Service">
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://gentera.com.mx/"
+				schemaLocation="http://10.130.5.169:8080/insurances/coverageCatalogueV2?xsd=1" />
+		</xsd:schema>
+	</types>
+	<message name="getCoverageV2">
+		<part name="parameters" element="tns:getCoverageV2" />
+	</message>
+	<message name="getCoverageV2Response">
+		<part name="parameters" element="tns:getCoverageV2Response" />
+	</message>
+	<portType name="coverageCatalogueV2">
+		<operation name="getCoverageV2">
+			<input
+				wsam:Action="http://gentera.com.mx/coverageCatalogueV2/getCoverageV2Request"
+				message="tns:getCoverageV2" />
+			<output
+				wsam:Action="http://gentera.com.mx/coverageCatalogueV2/getCoverageV2Response"
+				message="tns:getCoverageV2Response" />
+		</operation>
+	</portType>
+	<binding name="coverageCatalogueV2PortBinding"
+		type="tns:coverageCatalogueV2">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<operation name="getCoverageV2">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="coverageCatalogueV2Service">
+		<port name="coverageCatalogueV2Port"
+			binding="tns:coverageCatalogueV2PortBinding">
+			<soap:address
+				location="http://10.130.5.169:8080/insurances/coverageCatalogueV2" />
+		</port>
+	</service>
+</definitions>

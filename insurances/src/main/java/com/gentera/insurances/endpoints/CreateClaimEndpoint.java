@@ -36,7 +36,7 @@ public class CreateClaimEndpoint implements CreateClaim{
 	public ClaimCreationRespMsg createClaim(String insuranceID, String coverageID, Date claimDate, String affected,
 			String claimCauseID, String statusID, Date statusDate, String user, String trackingEmail,
 			String processInstanceID, String businessPartnerID, Integer claimDays, Integer flagCoverage, String initialDate,
-			String endDate, String claimPaymentType, String partnerID) {
+			String endDate, String claimPaymentType, Integer medicoID, String partnerID) {
 		
 		
 		logger.info("Se recibio una peticion del servicio {}", "CreateClaim");
@@ -80,6 +80,7 @@ public class CreateClaimEndpoint implements CreateClaim{
         }
 		
 		values.add(claimPaymentType);
+		values.add(medicoID);
 		values.add(partnerID);
 		
 		try {

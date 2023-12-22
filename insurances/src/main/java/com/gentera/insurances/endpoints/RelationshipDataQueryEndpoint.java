@@ -117,7 +117,8 @@ public class RelationshipDataQueryEndpoint implements RelationshipDataQuery{
 								index++;
 								item.setTest(0);
 								item.setCurp(resultSet.getString("CURP"));
-								item.setAgeFamily(resultSet.getInt("AGE"));		
+								item.setAgeFamily(resultSet.getInt("AGE"));	
+								item.setRelationshipCode(resultSet.getString("RELATIONSHIPCODE"));	
 							} catch (Exception e) {
 								throw new SQLException(
 										"Error al tratar de convertir registro desde Cursor: " + e.getMessage());

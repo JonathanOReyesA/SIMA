@@ -1,0 +1,2023 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.CoverageCatalogueV2",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageCatalogueV2EndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.beneficiariesSearch",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean beneficiariesSearchEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.beneficiariesSearchPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean beneficiariesSearchPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.businessPartnerSearch",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean businessPartnerSearchEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimAutomaticPayment",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimAutomaticPaymentEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimAutomaticPaymentPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimAutomaticPaymentPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimPayment",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimPaymentEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimPaymentlog",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimPaymentlogEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimRejection",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimRejectionEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimRejectionCatalogue",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimRejectionCatalogueEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimRejectionCataloguePE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimRejectionCataloguePEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimStatusCatalogue",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimStatusCatalogueEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimUpdate",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimUpdateEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.claimsSearchCertificate",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean claimsSearchCertificateEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.confirmationClaim",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean confirmationClaimEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.coverageCatalogue",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageCatalogueEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.coverageCataloguePE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageCataloguePEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.coverageCataloguePEV2",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageCataloguePEV2EndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.coverageDocumentsSearch",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageDocumentsSearchEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.coverageDocumentsSearchPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean coverageDocumentsSearchPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.createClaim",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean createClaimEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.createClaimPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean createClaimPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.createComment",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean createCommentEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.createServiceClaim",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean createServiceClaimEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.documentsCreation",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean documentsCreationEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getAffectedName",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getAffectedNameEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getAmountToPay",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getAmountToPayEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getAmountToPayPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getAmountToPayPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getCauseCatalogue",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getCauseCatalogueEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getCauseCataloguePE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getCauseCataloguePEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getExtensionValidation",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getExtensionValidationEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.getPaymentType",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean getPaymentTypeEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.insuranceClaimsSearch",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean insuranceClaimsSearchEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.insuranceClaimsSearchPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean insuranceClaimsSearchPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.insuranceSearchDashboard",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean insuranceSearchDashboardEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.manualPaymentValidation",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean manualPaymentValidationEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.moneyCatalogue",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean moneyCatalogueEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.paymentlogSearch",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean paymentlogSearchEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.processOperationInsurance",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean processOperationInsuranceEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.relationshipDataQuery",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean relationshipDataQueryEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.relationshipDataQueryPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean relationshipDataQueryPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchAddressMultiRiesgoPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchAddressMultiRiesgoPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchClaim",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchClaimEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchClaimComments",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchClaimCommentsEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchClaimPE",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchClaimPEEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchClaims",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchClaimsEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchPartners",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchPartnersEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchService",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchServiceEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchServiceClaim",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchServiceClaimEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.searchServiceUser",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean searchServiceUserEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.serviceGetAge",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean serviceGetAgeEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.serviceMail",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean serviceMailEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.siBeneficiariesManageSyncIn",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean siBeneficiariesManageSyncInEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.updateBeneficiaries",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean updateBeneficiariesEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.updateClaimStatus",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean updateClaimStatusEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    },
+    {
+      "sourceType": "com.gentera.insurances.configuration.ServicesConfig",
+      "name": "endpoint.updateServiceUser",
+      "sourceMethod": "public com.gentera.insurances.beans.EndpointBean updateServiceUserEndpointBean() ",
+      "type": "com.gentera.insurances.beans.EndpointBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.CoverageCatalogueV2.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearch.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.beneficiariesSearchPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.businessPartnerSearch.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPayment.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimAutomaticPaymentPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPayment.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimPaymentlog.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejection.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCatalogue.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimRejectionCataloguePE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimStatusCatalogue.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimUpdate.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.claimsSearchCertificate.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.confirmationClaim.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCatalogue.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageCataloguePEV2.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearch.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.coverageDocumentsSearchPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaim.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createClaimPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createComment.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.createServiceClaim.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.documentsCreation.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAffectedName.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPay.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getAmountToPayPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCatalogue.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getCauseCataloguePE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getExtensionValidation.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.getPaymentType.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearch.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceClaimsSearchPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.insuranceSearchDashboard.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.manualPaymentValidation.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.moneyCatalogue.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.paymentlogSearch.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.processOperationInsurance.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQuery.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.relationshipDataQueryPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchAddressMultiRiesgoPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaim.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimComments.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaimPE.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchClaims.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchPartners.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchService.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceClaim.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.searchServiceUser.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceGetAge.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.serviceMail.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.siBeneficiariesManageSyncIn.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateBeneficiaries.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateClaimStatus.stored-procedure-name-before",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.endpoint-context-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.file-d-b-remote",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.file-path-local",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.service-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.stored-procedure-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gentera.insurances.beans.EndpointBean",
+      "name": "endpoint.updateServiceUser.stored-procedure-name-before",
+      "type": "java.lang.String"
+    }
+  ]
+}

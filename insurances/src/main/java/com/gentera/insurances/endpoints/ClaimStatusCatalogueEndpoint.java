@@ -9,8 +9,9 @@ import java.util.Collection;
 import java.util.List;
 import mx.com.gentera.ClaimStatusCatalogue;
 import mx.com.gentera.ClaimStatusCatalogueRespMsgDataType;
+import mx.com.gentera.ClaimStatusDataType;
 //import mx.com.gentera.ClaimStatusDataType;
-import mx.com.gentera.SearchClaimsCertificateDataType;
+//import mx.com.gentera.SearchClaimsCertificateDataType;
 import mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureConfigurationNotFoundException;
 import mx.com.gentera.seguros.common.persistence.model.CallSPResponse;
 import mx.com.gentera.seguros.common.persistence.services.IPersistenceService;
@@ -38,41 +39,23 @@ public class ClaimStatusCatalogueEndpoint implements ClaimStatusCatalogue {
 		try {
 			callSPResponse = this.persistenceService.executeFunction_SIMA(
 					this.claimStatusCatalogueEndpointBean.getStoredProcedureName(), values,
-					new RowMapper<SearchClaimsCertificateDataType>() {
+					new RowMapper<ClaimStatusDataType>() {
 
 						@Override
-						public SearchClaimsCertificateDataType mapRow(ResultSet resultSet, int rowNum)
+						public ClaimStatusDataType mapRow(ResultSet resultSet, int rowNum)
 								throws SQLException {
-							SearchClaimsCertificateDataType item = new SearchClaimsCertificateDataType();
+							ClaimStatusDataType item = new ClaimStatusDataType();
 							int index = 0;
 							try {
 								index++;
 								if (resultSet.getString(index) != null)
-									item.setCertificate(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setProductName(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setModeName(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setProductQuote(Double.valueOf(resultSet.getDouble(index)));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setClaimID(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setAffectedName(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setCoverageName(resultSet.getString(index));
-								index++;
-								if (resultSet.getString(index) != null)
-									item.setClaimDate(resultSet.getDate(index));
+									item.setClaimStatusID(resultSet.getString(index));
 								index++;
 								if (resultSet.getString(index) != null)
 									item.setClaimStatusName(resultSet.getString(index));
+								index++;
+								if (resultSet.getString(index) != null)
+									item.setClaimStatusType(resultSet.getString(index));
 								index++;
 							} catch (Exception e) {
 								throw new SQLException(

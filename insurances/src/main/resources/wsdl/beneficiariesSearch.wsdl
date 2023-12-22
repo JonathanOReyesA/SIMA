@@ -13,10 +13,67 @@
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
 	targetNamespace="http://gentera.com.mx/" name="beneficiariesSearch">
 	<types>
-		<xsd:schema>
-			<xsd:import namespace="http://gentera.com.mx/"
-				schemaLocation="http://10.130.5.169:8080/insurances/beneficiariesSearch?xsd=1" />
-		</xsd:schema>
+		<xs:schema xmlns:tns="http://gentera.com.mx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+			targetNamespace="http://gentera.com.mx/">
+			<!-- Elements -->
+			<xs:element name="beneficiariesSearch" type="tns:beneficiariesSearch" />
+			<xs:element name="beneficiariesSearchResponse" type="tns:beneficiariesSearchResponse" />
+			
+			<!-- Request -->
+			<xs:complexType name="beneficiariesSearch">
+				<xs:sequence>
+					<xs:element name="insuranceID" type="xs:string" minOccurs="0" />
+					<xs:element name="mode" type="xs:string" minOccurs="0" />
+					<xs:element name="coverageID" type="xs:string" minOccurs="0" />
+					<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+					<xs:element name="affectedID" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="beneficiariesSearchResponse">
+				<xs:sequence>
+					<xs:element name="return" type="tns:beneficiariesSeachRespMsgDataType" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="beneficiariesSeachRespMsgDataType">
+				<xs:sequence>
+					<xs:element name="beneficiariesSearchList"
+						type="tns:beneficiaryDataType" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="beneficiaryDataType">
+				<xs:sequence>
+					<xs:element name="additionalFamilyName" type="xs:string" minOccurs="0" />
+					<xs:element name="addressType" type="xs:string" minOccurs="0" />
+					<xs:element name="age" type="xs:int" minOccurs="0" />
+					<xs:element name="birthday" type="xs:dateTime" minOccurs="0" />
+					<xs:element name="businessPartnerID" type="xs:string" minOccurs="0" />
+					<xs:element name="cellphone" type="xs:string" minOccurs="0" />
+					<xs:element name="cityName" type="xs:string" minOccurs="0" />
+					<xs:element name="countryName" type="xs:string" minOccurs="0" />
+					<xs:element name="districtName" type="xs:string" minOccurs="0" />
+					<xs:element name="exteriorHouseID" type="xs:string" minOccurs="0" />
+					<xs:element name="familyName" type="xs:string" minOccurs="0" />
+					<xs:element name="gender" type="xs:string" minOccurs="0" />
+					<xs:element name="givenName" type="xs:string" minOccurs="0" />
+					<xs:element name="homePhone" type="xs:string" minOccurs="0" />
+					<xs:element name="interiorHouseID" type="xs:string" minOccurs="0" />
+					<xs:element name="maritalStatus" type="xs:string" minOccurs="0" />
+					<xs:element name="marriedFamilyName" type="xs:string" minOccurs="0" />
+					<xs:element name="middleName" type="xs:string" minOccurs="0" />
+					<xs:element name="officePhone" type="xs:string" minOccurs="0" />
+					<xs:element name="percentage" type="xs:string" minOccurs="0" />
+					<xs:element name="postalCode" type="xs:string" minOccurs="0" />
+					<xs:element name="regionName" type="xs:string" minOccurs="0" />
+					<xs:element name="relationshipName" type="xs:string" minOccurs="0" />
+					<xs:element name="roleCode" type="xs:string" minOccurs="0" />
+					<xs:element name="streetName" type="xs:string" minOccurs="0" />
+					<xs:element name="taxID" type="xs:string" minOccurs="0" />
+					<xs:element name="zone" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
 	</types>
 	<message name="beneficiariesSearch">
 		<part name="parameters" element="tns:beneficiariesSearch" />

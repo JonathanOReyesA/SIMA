@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="coverageCatalogueID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="relationshipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,11 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "coverageDocumentsSearch", propOrder = {
-    "coverageCatalogueID"
+    "coverageCatalogueID",
+    "relationshipCode"
 })
 public class CoverageDocumentsSearch_Type {
 
     protected String coverageCatalogueID;
+    protected String relationshipCode;
 
     /**
      * Obtiene el valor de la propiedad coverageCatalogueID.
@@ -55,6 +58,30 @@ public class CoverageDocumentsSearch_Type {
      */
     public void setCoverageCatalogueID(String value) {
         this.coverageCatalogueID = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad relationshipCode.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRelationshipCode() {
+        return relationshipCode;
+    }
+
+    /**
+     * Define el valor de la propiedad relationshipCode.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRelationshipCode(String value) {
+        this.relationshipCode = value;
     }
 
 }
