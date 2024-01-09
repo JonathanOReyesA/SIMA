@@ -59,5 +59,7 @@ public class JobProperty implements Serializable {
 	public void setPropertyEditable(Boolean propertyEditable) {
 		this.propertyEditable = propertyEditable;
 	}
+	
+	
 
 }

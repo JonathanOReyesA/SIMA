@@ -59,7 +59,6 @@ public class JobLauncherController {
 	@RequestMapping(value = { "/{jobName}/execute" }, method = { RequestMethod.GET })
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<MsgResponse> executeJob(@PathVariable("jobName") String jobName) throws Exception {
-
 		log.info("Iniciando la ejecución del job {} por peticiREST", jobName);
 		MsgResponse msgResponse = this.schedulerTasks.executeJob(jobName);
 		return ResponseEntity.ok(msgResponse);
@@ -70,7 +69,7 @@ public class JobLauncherController {
 	public ResponseEntity<MsgResponse> retryJob(@PathVariable("jobName") String jobName,
 			@PathVariable("uuid") String uuid) throws Exception {
 
-		log.info("Iniciando de nueva cuenta la ejecucidel job {} con uuid {} por peticiREST", jobName, uuid);
+		log.info("Iniciando de nueva cuenta la ejecución del job {} con uuid {} por peticiREST", jobName, uuid);
 		MsgResponse msgResponse = this.schedulerTasks.retryJob(jobName, uuid);
 		return ResponseEntity.ok(msgResponse);
 	}

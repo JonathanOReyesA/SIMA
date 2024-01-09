@@ -26,7 +26,6 @@ public class SmtpConfig {
 	@Bean
 	@ConfigurationProperties(prefix = "smtp.server.seguros")
 	public SmtpBean segurosSmtp() {
-
 		return new SmtpBean();
 	}
 }

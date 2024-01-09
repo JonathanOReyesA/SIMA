@@ -82,6 +82,7 @@ public class SimaWebController {
 	@RequestMapping(value = { "/job/{jobName}/start" }, method = { RequestMethod.GET })
 	public ResponseEntity<MsgResponse> startScheduledJob(@PathVariable("jobName") String jobName) throws Exception {
 		ResponseEntity<MsgResponse> response = null;
+		log.info("METHOD START");
 		response = new ResponseEntity<MsgResponse>(this.schedulerService.start(jobName), HttpStatus.ACCEPTED);
 		return response;
 	}
@@ -89,6 +90,7 @@ public class SimaWebController {
 	@RequestMapping(value = { "/job/{jobName}/execute" }, method = { RequestMethod.GET })
 	public ResponseEntity<MsgResponse> executeScheduledJob(@PathVariable("jobName") String jobName) throws Exception {
 		ResponseEntity<MsgResponse> response = null;
+		log.info("METHOD EXECUTE");
 		response = new ResponseEntity<MsgResponse>(this.schedulerService.execute(jobName), HttpStatus.ACCEPTED);
 		return response;
 	}

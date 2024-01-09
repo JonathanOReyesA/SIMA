@@ -45,7 +45,7 @@ public class ZipTaskletStep implements Tasklet, StepExecutionListener {
 	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws IOException,
 			StoredProcedureConfigurationNotFoundException, StoredProcedureParametersNotMatchException,
 			StoredProcedureParametersTypesMismatchException, UnexpectedResponseCodeException, NotFoundException {
-		log.info("Iniciando compreside archivos");
+		log.info("Iniciando compresión de archivos");
 		Map<String, Map<String, String>> mapFiles = this.serverService.streamFiles(this.lstFileItem,
 				this.jobPropertiesBean.extension);
 		this.lstFile = this.serverService.createZipFiles(mapFiles, this.jobPropertiesBean.dateFormat,

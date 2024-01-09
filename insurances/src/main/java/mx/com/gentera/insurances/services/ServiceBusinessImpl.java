@@ -123,7 +123,7 @@ public class ServiceBusinessImpl implements ServiceBusiness {
 					String subject = SUBJECTMESSAGE + claimID;
 					body = body.replaceAll("\\.", "<br>");
 					// emailCc
-					emailService.sendSimpleMessage(emailTo, subject, body);
+					emailService.sendSimpleMessage(emailTo, subject, body,null);
 					logger.info(SEND_SUCCESS_MAIL);
 				} catch (MessagingException e) {
 					logger.error("No se pudo enviar correo electronico " + e.getMessage());

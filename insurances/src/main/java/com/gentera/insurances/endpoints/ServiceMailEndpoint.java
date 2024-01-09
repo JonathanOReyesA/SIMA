@@ -24,7 +24,7 @@ public class ServiceMailEndpoint implements ServiceMail {
 	public void serviceMail(String sendTo, String from, String subject, String body) {
 		try {
 			logger.info("Enviando correo electronico");
-			emailService.sendSimpleMessage(sendTo, subject, body);
+			emailService.sendSimpleMessage(sendTo, subject, body,null);
 		} catch (MessagingException e) {
 			logger.error("Error al tratar de enviar correo electronico");
 			e.printStackTrace();

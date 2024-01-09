@@ -318,13 +318,14 @@ public class ServerServiceImpl implements IServerService {
 		return deleteFail;
 	}
 
-	public Boolean sendEmail(String to, String subject, String text) {
+	public Boolean sendEmail(String to, String subject, String text,String jobName) {
 		Boolean result = Boolean.valueOf(false);
 		try {
-			this.emailService.sendSimpleMessage(to, subject, text);
+			this.emailService.sendSimpleMessage(to, subject, text, jobName);
 			result = Boolean.valueOf(true);
 		} catch (MessagingException e) {
-			log.error("Ocurrió un error al intentar enviar correo electra la dirección {}", to);
+			log.error("Ocurrió un error al intentar enviar correo electronicó ala dirección {}", to);
+			log.error("Error: {}", e);
 		}
 		return result;
 	}

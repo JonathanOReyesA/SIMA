@@ -120,12 +120,15 @@ public class SchedulerTasksServiceImpl implements ISchedulerTaskService {
 		return msgResponse;
 	}
 
+	@SuppressWarnings("unused")
 	@Async
-	public MsgResponse executeJob(String jobName)
-			throws JobConfigurationNotExistsException, JobImplementationNotExistsException {
+	public MsgResponse executeJob(String jobName) throws JobConfigurationNotExistsException, JobImplementationNotExistsException {
 		JobPropertiesBean jobPropertiesBean = getJobPropertiesByName(jobName);
+		log.info("Execute Job: {}",jobName);
+		log.info("jobProperties: {}",jobPropertiesBean.toString());
 		if (jobPropertiesBean == null)
 			throw new JobConfigurationNotExistsException("No se encontró la configuración para el job: " + jobName);
+		
 		return this.jobLaunchService.launchJobExecution(jobName, jobPropertiesBean, null, Boolean.valueOf(true));
 	}
 

@@ -26,6 +26,14 @@ public class SmtpBean {
 	 */
 	private String password;
 	/**
+	 * Correo para enviar correos cuando hay un envio automatico en Mexico
+	 */
+	private String correoActivation;
+	/**
+	 * contraseña de correo para enviar correos cuando hay un envio automatico en Mexico
+	 */
+	private String passwordActivation;
+	/**
 	 * Indicador de autenticacion requerida en el servidor
 	 */
 	private String auth;
@@ -93,6 +101,35 @@ public class SmtpBean {
 	 */
 	public String getPassword() {
 		return password;
+	}
+	
+
+	/**
+	 * @return the correoActivation
+	 */
+	public String getCorreoActivation() {
+		return correoActivation;
+	}
+
+	/**
+	 * @param correoActivation the correoActivation to set
+	 */
+	public void setCorreoActivation(String correoActivation) {
+		this.correoActivation = correoActivation;
+	}
+
+	/**
+	 * @return the passwordActivation
+	 */
+	public String getPasswordActivation() {
+		return passwordActivation;
+	}
+
+	/**
+	 * @param passwordActivation the passwordActivation to set
+	 */
+	public void setPasswordActivation(String passwordActivation) {
+		this.passwordActivation = passwordActivation;
 	}
 
 	/**

@@ -46,7 +46,7 @@ public interface IServerService {
 			throws StoredProcedureConfigurationNotFoundException, StoredProcedureParametersNotMatchException,
 			StoredProcedureParametersTypesMismatchException, UnexpectedResponseCodeException;
 
-	Boolean sendEmail(String paramString1, String paramString2, String paramString3);
+	Boolean sendEmail(String paramString1, String paramString2, String paramString3,String jobName);
 
 	CallSPResponse executeSP_SIMA(String paramString, List<Object> paramList)
 			throws StoredProcedureConfigurationNotFoundException, StoredProcedureParametersNotMatchException,

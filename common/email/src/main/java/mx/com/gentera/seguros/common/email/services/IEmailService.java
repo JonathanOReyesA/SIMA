@@ -22,7 +22,7 @@ public interface IEmailService {
 	 * @throws MessagingException Lanza una exepcion cuando ocurre un error al
 	 *                            intentar enviar un correo electronico
 	 */
-	public void sendSimpleMessage(String to, String subject, String text) throws AddressException, MessagingException;
+	public void sendSimpleMessage(String to, String subject, String text, String jobName) throws AddressException, MessagingException;
 
 	public void sendComplexMessage(String to, String subject, String text, List<String> attachFiles)
 			throws AddressException, MessagingException;

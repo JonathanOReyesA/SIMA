@@ -25,7 +25,7 @@ public class EmailLocalServiceImpl implements IEmailService {
 	 * @see mx.com.gentera.psc.scheduler.services.IEmailService#sendSimpleMessage(java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
-	public void sendSimpleMessage(String to, String subject, String text) throws AddressException, MessagingException {
+	public void sendSimpleMessage(String to, String subject, String text, String jobName) throws AddressException, MessagingException {
 		log.warn("En ambiente local no está permitido enviar correos electrónicos");
 	}
 

@@ -30,7 +30,7 @@ import org.springframework.http.HttpHeaders;
 @Service
 public class SchedulerServiceImpl implements ISchedulerService {
 
-	private static final Logger log = LoggerFactory.getLogger(SchedulerServiceImpl.class);
+	//private static final Logger log = LoggerFactory.getLogger(SchedulerServiceImpl.class);
 
 	@Autowired
 	ApiPropertiesBean apiSchedulerBean;
@@ -50,8 +50,7 @@ public class SchedulerServiceImpl implements ISchedulerService {
 			}
 		};
 
-		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/history/job/" + jobName);
-		log.info("httpsHeaders: {} ", headers.toString());
+		
 		ResponseEntity<List<JobExecutionsHistory>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/history/job/" + jobName, HttpMethod.GET,
 				new HttpEntity(headers), new ParameterizedTypeReference<List<JobExecutionsHistory>>() {
@@ -73,7 +72,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/stop");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/stop", HttpMethod.GET,
 				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
@@ -96,7 +94,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/start");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/start", HttpMethod.GET,
 				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
@@ -119,7 +116,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/execute");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/execute", HttpMethod.GET,
 				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
@@ -142,7 +138,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/retry/");
 		ResponseEntity<MsgResponse> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/retry/" + uuid, HttpMethod.GET,
 				new HttpEntity(httpHeaders), new ParameterizedTypeReference<MsgResponse>() {
@@ -165,7 +160,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}, METODO: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/properties","GET");
 		ResponseEntity<List<JobProperty>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/properties", HttpMethod.GET,
 				new HttpEntity(httpHeaders), new ParameterizedTypeReference<List<JobProperty>>() {
@@ -189,7 +183,6 @@ public class SchedulerServiceImpl implements ISchedulerService {
 				set("Authorization", authHeader);
 			}
 		};
-		log.info("url: {}, METODO: {}", this.apiSchedulerBean.getUrl() + "/" + jobName + "/properties","POST");
 		ResponseEntity<List<JobProperty>> response = restTemplate.exchange(
 				String.valueOf(this.apiSchedulerBean.getUrl()) + "/" + jobName + "/properties", HttpMethod.POST,
 				new HttpEntity(lstJobProperties, httpHeaders), new ParameterizedTypeReference<List<JobProperty>>() {

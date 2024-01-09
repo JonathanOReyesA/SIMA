@@ -78,6 +78,8 @@ public class JobPropertiesBean {
 	public String remoteErrorNameFile;
 
 	public String nameCron;
+	
+	//public String destinationEmailSend;
 
 	private String remoteTargetFolderStr() {
 		String result = "[";

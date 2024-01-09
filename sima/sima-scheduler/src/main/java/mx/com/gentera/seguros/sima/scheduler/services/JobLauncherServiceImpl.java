@@ -1,6 +1,10 @@
 package mx.com.gentera.seguros.sima.scheduler.services;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import mx.com.gentera.seguros.sima.scheduler.beans.JobPropertiesBean;
@@ -88,12 +92,12 @@ public class JobLauncherServiceImpl implements IJobLauncherService {
 
 	public MsgResponse launchJobExecution(String jobName, JobPropertiesBean jobPropertiesBean, String uuid,
 			Boolean allowRetry) throws JobImplementationNotExistsException {
+		log.info("######################################################################");
 		Job job;
 		MsgResponse msgResponse = new MsgResponse();
 		String uuidStr = "";
 		String status = "";
 		JobParameters jobParameters = new JobParameters();
-		log.info("jobName: {}", jobName);
 		switch (jobName) {
 		case "sendFilesMX":
 			job = this.sendFilesMX;
@@ -178,17 +182,16 @@ public class JobLauncherServiceImpl implements IJobLauncherService {
 					return msgResponse;
 				}
 			}
+			log.info("Validar donde se executa SendFilesSPTask");
 			jobParametersBuilder.addString("uuid", uuidStr);
 			jobParameters = jobParametersBuilder.toJobParameters();
 			do {
 				if (attempts > 0)
 					TimeUnit.SECONDS.sleep(secondsBeforeRetry);
 				attempts++;
-				log.info("parametros job{} ",jobParameters.toString());
-				log.info("job Name {}", job.getName());
 				JobExecution jobExecution = this.jobLauncher.run(job, jobParameters);
 				status = jobExecution.getStatus().getBatchStatus().toString();
-				log.info("jobStatus: {}",status);
+				
 				if (jobExecution.getStatus().compareTo(BatchStatus.COMPLETED) == 0) {
 					msgResponse.setCode(Integer.valueOf(0));
 				} else {
@@ -196,16 +199,19 @@ public class JobLauncherServiceImpl implements IJobLauncherService {
 				}
 				msgResponse.setDescription(
 						jobExecution.getExitStatus().getExitCode() + jobExecution.getExitStatus().getExitDescription());
-			   log.info("response : {}",msgResponse.toString());
+				
+				log.info("response : {}", msgResponse.toString());
+				
 			} while (msgResponse.getCode().compareTo(Integer.valueOf(0)) != 0 && attempts <= retries
 					&& allowRetry.booleanValue());
+			
 		} catch (JobExecutionAlreadyRunningException | org.springframework.batch.core.repository.JobRestartException
 				| org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException
 				| org.springframework.batch.core.JobParametersInvalidException | InterruptedException e) {
 			msgResponse.setCode(Integer.valueOf(-1));
 			msgResponse.setDescription(e.toString());
 		}
-		
+
 		if (msgResponse.getCode().compareTo(Integer.valueOf(0)) != 0) {
 			StringBuilder sb = new StringBuilder();
 			sb.append("<p>Ocurrió un error durante la ejecució del Job <strong>[" + jobName + "]</strong></p>")
@@ -224,9 +230,32 @@ public class JobLauncherServiceImpl implements IJobLauncherService {
 				sb.append("<br>" + jobExecutionItem.getExitDescription() + "<br>");
 			}
 			this.serverService.sendEmail(jobPropertiesBean.destinationEmailError,
-					"Error en la ejecucidel Job [" + jobName + "] con id: [" + uuidStr + "]", sb.toString());
+					"Error en la ejecucidel Job [" + jobName + "] con id: [" + uuidStr + "]", sb.toString(), null);
 		}
+		
+		/*
+		 * Se coloca esta parta pornuevo requerimientos mas familiares
+		 * En la cual se envia correo una vez finalizado el envio automatico de Mexico 
+		 */
+		
+		//int code = msgResponse.getCode().compareTo(Integer.valueOf(0));
+	    if (msgResponse.getCode().compareTo(Integer.valueOf(0)) == 0  && jobName.equals("sendFilesMX")) {
+			LocalDate currentDate= LocalDate.now();
+			Month mes = currentDate.getMonth();
+			String mesNombre = mes.getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
+			StringBuilder sb = new StringBuilder();
+			sb.append("<p>Se confirma el envío de archivos de "+ currentDate.getDayOfMonth()+" de "+mesNombre+"</p>")
+					.append(System.lineSeparator());
+			sb.append("<p><strong>Altas: </strong>[" + uuidStr + "]<br>");
+			sb.append("<p><strong>Cancelaciones: </strong>[" + jobPropertiesBean.toString() + "]<br>");
+			sb.append("<p><strong>Cancelaciones por cambio de producto: </strong>[[" + status + "]</strong></p><br>");
+			
+			this.serverService.sendEmail("jonathan.reyes@aitmexico.onmicrosoft.com",
+					"Envío de archivos " + currentDate.getDayOfMonth() + " de " + mesNombre + " de "+ currentDate.getYear(), sb.toString(),"sendFilesMX");
+        }
+		
 		log.info("El job {} ha finalizado", jobName);
+		log.info("######################################################################");
 		return msgResponse;
 	}
 }

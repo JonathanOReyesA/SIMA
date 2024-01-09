@@ -23,6 +23,12 @@
     },
     {
       "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.correo-activation",
+      "description": "Correo para enviar correos cuando hay un envio automatico en Mexico",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
       "name": "smtp.server.seguros.host",
       "description": "Nombre del host del servicio SMTP",
       "type": "java.lang.String"
@@ -36,6 +42,12 @@
       "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
       "name": "smtp.server.seguros.password",
       "description": "Password para ingresar al SMTP",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "mx.com.gentera.seguros.common.email.beans.SmtpBean",
+      "name": "smtp.server.seguros.password-activation",
+      "description": "contraseña de correo para enviar correos cuando hay un envio automatico en Mexico",
       "type": "java.lang.String"
     },
     {

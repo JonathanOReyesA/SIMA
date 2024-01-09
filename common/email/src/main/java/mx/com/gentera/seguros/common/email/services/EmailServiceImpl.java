@@ -55,19 +55,19 @@ public class EmailServiceImpl implements IEmailService {
 	/**
 	 * Configuracion de la conexion al servidor SMTP
 	 */
-	private void config() {
+	private void config(String jobName) {
+		
 		properties.put("mail.smtp.host", segurosSmtp.getHost());
 		properties.put("mail.smtp.port", segurosSmtp.getPort());
-		properties.put("mail.smtp.user", segurosSmtp.getUser());
-		properties.put("mail.smtp.password", segurosSmtp.getPassword());
-		properties.put("mail.smtp.auth", segurosSmtp.getAuth());
+		properties.put("mail.smtp.user", jobName.equals("sendFilesMX") ? segurosSmtp.getCorreoActivation() : segurosSmtp.getUser());
+		properties.put("mail.smtp.password", jobName.equals("sendFilesMX") ? segurosSmtp.getPasswordActivation() : segurosSmtp.getPassword());
+		properties.put("mail.smtp.auth",  segurosSmtp.getAuth());
 		properties.put("mail.smtp.ssl.enable", segurosSmtp.getSsl());
 		properties.put("mail.smtp.ssl.checkserveridentity", segurosSmtp.getCheckserveridentity());
 		log.info("Properties: {}", properties.toString());
 		session = Session.getDefaultInstance(properties);
-
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -76,13 +76,12 @@ public class EmailServiceImpl implements IEmailService {
 	 * lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
-	public void sendSimpleMessage(String to, String subject, String text) throws AddressException, MessagingException {
-		config();
+	public void sendSimpleMessage(String to, String subject, String text,String jobName) throws AddressException, MessagingException {
+		config(jobName);
 
 		log.info("Enviando correo electrónico hacia {}", to);
-
+        log.info((String) properties.get("mail.smtp.user"));
 		MimeMessage message = new MimeMessage(session);
-
 		message.setFrom(new InternetAddress((String) properties.get("mail.smtp.user")));
 		to = to.replaceAll(";", ",");
 		message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
@@ -106,7 +105,7 @@ public class EmailServiceImpl implements IEmailService {
 	@Override
 	public void sendComplexMessage(String to, String subject, String text, List<String> attachFiles)
 			throws AddressException, MessagingException {
-		config();
+		config(null);
 
 		log.info("Enviando correo electrónico hacia {}", to);
 
