@@ -19,6 +19,7 @@ import mx.com.gentera.seguros.sima.scheduler.tasklets.MoveFilesTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.ReadRowsInsuranceTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.SFTPTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.SPTaskletStep;
+import mx.com.gentera.seguros.sima.scheduler.tasklets.SendEmailAutomationPaymentTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.SendFilesClaimSPTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.SendFilesRoboSPTaskletStep;
 import mx.com.gentera.seguros.sima.scheduler.tasklets.SendFilesSPTaskletStep;
@@ -220,6 +221,12 @@ public class BatchConfig extends DefaultBatchConfigurer {
 
 	@Bean
 	@StepScope
+	public SendEmailAutomationPaymentTaskletStep sendEmailAutomationPaymentTaskletStep() {
+		return new SendEmailAutomationPaymentTaskletStep();
+	}
+
+	@Bean
+	@StepScope
 	public ValidFormatFilePETasklet validFormatFilePETasklet() {
 		return new ValidFormatFilePETasklet(this.filesSftpSession);
 	}
@@ -369,6 +376,12 @@ public class BatchConfig extends DefaultBatchConfigurer {
 	}
 
 	@Bean
+	public Step sendEmailAutomationPaymentStep() {
+		return (Step) this.stepBuilderFactory.get("sendEmailAutomationPaymentTaskletStep")
+				.tasklet((Tasklet) sendEmailAutomationPaymentTaskletStep()).build();
+	}
+
+	@Bean
 	public Step deleteFileTmpStep() {
 		return (Step) this.stepBuilderFactory.get("deleteFileTmpStep").tasklet((Tasklet) deleteFileTmpTaskletStep())
 				.build();
@@ -459,6 +472,7 @@ public class BatchConfig extends DefaultBatchConfigurer {
 		return ((FlowJobBuilder) this.jobBuilderFactory.get("sendFilesMX").start(sendFilesSPStep()).on("NOOP")
 				.end("COMPLETED").from(sendFilesSPStep()).on("COMPLETED").to(zipStep()).from(zipStep()).on("COMPLETED")
 				.to(sftpAternaStep()).from(sftpAternaStep()).on("COMPLETED").to(sftpMapfreStep()).from(sftpMapfreStep())
+				.on("COMPLETED").to(sendEmailAutomationPaymentStep()).from(sendEmailAutomationPaymentStep())
 				.on("COMPLETED").to(deleteStep()).end()).build();
 	}
 

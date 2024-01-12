@@ -30,6 +30,7 @@ C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\s
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\annotations\SourceTableField.java
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\exceptions\SftpSendingException.java
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\tasklets\SendFilesSPTaskletStep.java
+C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\tasklets\SendEmailAutomationPaymentTaskletStep.java
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\writers\InsuranceAltaWriter.java
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\exceptions\InvalidCronExpressionException.java
 C:\Users\e-jonreyes\Documents\workspace-spring-tool-suite-sima-service\seguros\sima\sima-scheduler\src\main\java\mx\com\gentera\seguros\sima\scheduler\tasklets\SPTaskletStep.java

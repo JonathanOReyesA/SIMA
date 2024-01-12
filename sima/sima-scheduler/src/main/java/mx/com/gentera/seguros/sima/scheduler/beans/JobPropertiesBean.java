@@ -79,7 +79,7 @@ public class JobPropertiesBean {
 
 	public String nameCron;
 	
-	//public String destinationEmailSend;
+	public String destinationEmailInsuranceSend;
 
 	private String remoteTargetFolderStr() {
 		String result = "[";
@@ -121,6 +121,8 @@ public class JobPropertiesBean {
 				+ ((this.extension != null) ? ("extension=" + this.extension + ", ") : "")
 				+ ((this.zipExtension != null) ? ("zipExtension=" + this.zipExtension + ", ") : "")
 				+ ((this.destinationEmailError != null) ? ("destinationEmailError=" + this.destinationEmailError + ", ")
+						: "")
+				+((this.destinationEmailInsuranceSend != null) ? ("destinationEmailAutomaticPayment=" + this.destinationEmailInsuranceSend + ", ")
 						: "")
 				+ ((this.subjectEmailError != null) ? ("subjectEmailError=" + this.subjectEmailError + ", ") : "")
 				+ ((this.partnerId != null) ? ("partnerId=" + this.partnerId + ", ") : "")

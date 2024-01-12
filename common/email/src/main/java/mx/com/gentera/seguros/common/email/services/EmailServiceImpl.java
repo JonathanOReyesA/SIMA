@@ -79,8 +79,6 @@ public class EmailServiceImpl implements IEmailService {
 	public void sendSimpleMessage(String to, String subject, String text,String jobName) throws AddressException, MessagingException {
 		config(jobName);
 
-		log.info("Enviando correo electrónico hacia {}", to);
-        log.info((String) properties.get("mail.smtp.user"));
 		MimeMessage message = new MimeMessage(session);
 		message.setFrom(new InternetAddress((String) properties.get("mail.smtp.user")));
 		to = to.replaceAll(";", ",");
@@ -89,7 +87,6 @@ public class EmailServiceImpl implements IEmailService {
 		message.setContent(text, "text/html; charset=utf-8");
 		Transport t = session.getTransport("smtp");
 		t.connect(segurosSmtp.getHost(), segurosSmtp.getPort(), segurosSmtp.getUser(), segurosSmtp.getPassword());
-		log.info("PASO EL CONTECT: {} ", t.isConnected());
 		t.sendMessage(message, message.getAllRecipients());
 		log.info("Correo electrónico enviado");
 		t.close();

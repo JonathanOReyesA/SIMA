@@ -37,6 +37,8 @@ public interface IServerService {
 			throws SftpSendingException;
 
 	Boolean deleteFiles(List<String> paramList);
+	
+	
 
 	List<FileItem> getLstFileItem(String paramString, List<Object> paramList, int paramInt)
 			throws StoredProcedureConfigurationNotFoundException, StoredProcedureParametersNotMatchException,

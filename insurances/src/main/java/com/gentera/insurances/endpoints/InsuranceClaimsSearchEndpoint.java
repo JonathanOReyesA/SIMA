@@ -51,13 +51,14 @@ public class InsuranceClaimsSearchEndpoint implements InsuranceClaimsSearch{
 						public InsuranceClaimsDataType mapRow(ResultSet rset, int i) throws SQLException {
 							InsuranceClaimsDataType e = new InsuranceClaimsDataType();
 							try {
-								 
 				                    e.setCertificate(rset.getString("CERTIFICATE"));
 				                    e.setInsuranceID(rset.getString("INSURANCEID"));
 				                    e.setProductName(rset.getString("PRODUCTNAME"));
 				                    e.setProductID(rset.getString("PRODUCTID"));
 				                    e.setPartnerID(rset.getString("PARTNERID"));
-				                    e.setModeName(rset.getString(6));
+				                    if (rset.getString(6) != null) 
+				                    	e.setModeName(rset.getString(6));
+				                    
 				                    e.setBusinessPartnerID(rset.getString("BUSINESSPARTNERID"));
 				                    e.setTaxID(rset.getString("TAXID"));
 				                    e.setExtMonth(rset.getInt("EXTMONTHS"));
@@ -101,27 +102,68 @@ public class InsuranceClaimsSearchEndpoint implements InsuranceClaimsSearch{
 				                    } catch (Exception ex) {
 				                        e.setFecRenov("");
 				                    }
-				                    e.setRelFullName(rset.getString(32));
-				                    e.setRelGivenName(rset.getString(33));
-				                    e.setFullName(rset.getString(8));
-				                    e.setRelMiddleName(rset.getString(34));
-				                    e.setRelFamilyName(rset.getString(35));
-				                    e.setRelAdditionalFamilyName(rset.getString(36));
-				                    e.setRelTaxID(rset.getString(37));
-				                    e.setRelHomePhone(rset.getString(38));
-				                    e.setRelOfficePhone(rset.getString(39));
-				                    e.setRelCellPhone(rset.getString(40));
-				                    e.setRelStreetName(rset.getString(41));
-				                    e.setRelExteriorHouseID(rset.getString(42));
-				                    e.setRelInteriorHouseID(rset.getString(43));
-				                    e.setRelCityName(rset.getString(44));
-				                    e.setRelDistrictName(rset.getString(45));
+				                    if (rset.getString(32) != null) 
+				                    	e.setRelFullName(rset.getString(32));
+				                    
+				                    if (rset.getString(33) != null) 
+				                    	e.setRelFullName(rset.getString(33));
+				                    
+				                    if (rset.getString(8) != null) 
+				                    	e.setRelFullName(rset.getString(8));
+				                    	
+				                    if (rset.getString(34) != null) 
+				                    	e.setRelFullName(rset.getString(34));
+				                    
+				                    if (rset.getString(35) != null) 
+				                    	e.setRelFullName(rset.getString(35));
+				                    
+				                    if (rset.getString(36) != null) 
+				                    	e.setRelFullName(rset.getString(36));
+				                   
+				                    if (rset.getString(37) != null) 
+				                    	e.setRelFullName(rset.getString(37));
+				                
+				                    if (rset.getString(38) != null) 
+				                    	e.setRelFullName(rset.getString(38));
+				                    
+				                    if (rset.getString(39) != null) 
+				                    	e.setRelFullName(rset.getString(39));
+				                    
+				                    if (rset.getString(40) != null) 
+				                    	e.setRelFullName(rset.getString(40));
+				                    
+				                    if (rset.getString(41) != null) 
+				                    	e.setRelFullName(rset.getString(41));
+				                  
+				                    if (rset.getString(42) != null) 
+				                    	e.setRelFullName(rset.getString(42));
+				                    
+				                    if (rset.getString(43) != null) 
+				                    	e.setRelFullName(rset.getString(43));
+				                    
+				                    if (rset.getString(44) != null) 
+				                    	e.setRelFullName(rset.getString(44));
+				                    
+				                    if (rset.getString(45) != null) 
+				                    	e.setRelFullName(rset.getString(45));
+				                    
 				                    e.setMoneyType(rset.getString("COUNTRYCURRENCY"));
-				                    e.setRelRegionName(rset.getString(46));
-				                    e.setRelPostalCode(rset.getString(47));
-				                    e.setRelCountryName(rset.getString(48));
-				                    e.setPartnerName(rset.getString(55));
-				                    e.setRelativeID(rset.getString(31));
+				                    
+				                    if (rset.getString(46) != null) 
+				                    	e.setRelFullName(rset.getString(36));
+				                    
+				                    if (rset.getString(47) != null) 
+				                    	e.setRelFullName(rset.getString(47));
+				                    
+				                    if (rset.getString(48) != null) 
+				                    	e.setRelFullName(rset.getString(48));
+				                    
+				                    if (rset.getString(55) != null) 
+				                    	e.setRelFullName(rset.getString(55));
+				                    
+				                    if (rset.getString(31) != null) 
+				                    	e.setRelFullName(rset.getString(34));
+				                    
 							} catch (Exception ex) {
 								throw new SQLException(
 										"Error al tratar de convertir registro desde Cursor: " + ex.getMessage());

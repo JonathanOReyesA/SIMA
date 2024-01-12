@@ -2,7 +2,7 @@ package mx.com.gentera.seguros.sima.scheduler.tasklets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 import java.util.List;
 import javassist.NotFoundException;
 import mx.com.gentera.seguros.common.persistence.exceptions.StoredProcedureConfigurationNotFoundException;
@@ -47,11 +47,6 @@ public class SendFilesSPTaskletStep implements Tasklet, StepExecutionListener {
     values.add(this.jobPropertiesBean.partnerId);
     this.lstFileItem = this.serverService.getLstFileItem(this.jobPropertiesBean.storedProcedureName, values, 0);
     log.info("Archivos encontrados: {}", Integer.valueOf(this.lstFileItem.size()));
-    if (this.lstFileItem != null && this.lstFileItem.size() > 0) {
-         for (FileItem fileItem : this.lstFileItem ) {
-	          log.info("fileItem :{} ",fileItem.toString());
-	    }
-    }
     chunkContext.getStepContext().getStepExecution().getJobExecution().getExecutionContext().put("lstFileItem", this.lstFileItem);
     return RepeatStatus.FINISHED;
   }
